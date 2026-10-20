@@ -282,6 +282,30 @@
         }, 50);
       }, { passive: true });
     }
+
+    /**
+     * 8. GESTIONE ACCORDION FAQ (Accessibile WAI-ARIA, Tastiera, Transizioni Lisce)
+     * ------------------------------------------------------------------------
+     */
+    const faqTriggers = document.querySelectorAll('.faq-trigger');
+
+    faqTriggers.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+        const panelId = btn.getAttribute('aria-controls');
+        const panel = document.getElementById(panelId);
+
+        if (!panel) return;
+
+        if (isExpanded) {
+          btn.setAttribute('aria-expanded', 'false');
+          panel.classList.remove('is-open');
+        } else {
+          btn.setAttribute('aria-expanded', 'true');
+          panel.classList.add('is-open');
+        }
+      });
+    });
   });
 })();
 

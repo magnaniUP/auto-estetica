@@ -1660,65 +1660,1462 @@ svg {
   }
 }
 
-/* --------------------------------------------------------------------------
-   13. SPAZIO RISERVATO PER SEZIONI FUTURE (Placeholder Invisibile)
-   Consente di testare gli ancoraggi (#lavori, #chi-siamo, ecc.) in questa fase
-   -------------------------------------------------------------------------- */
-.section-anchor-placeholder {
-  min-height: 80vh;
-  padding: 4rem 1.5rem;
+/* ==========================================================================
+   13. SEZIONE CHI SIAMO (ETAPA 5 - PASSIONE, ESPERIENZA E ATTENZIONE AI DETTAGLI)
+   Layout a due colonne con fotografia professionale e tre differenziatori
+   ========================================================================== */
+.chi-siamo-section {
+  position: relative;
+  background-color: var(--color-bg-primary);
+  background: radial-gradient(circle at 10% 50%, rgba(141, 234, 32, 0.025) 0%, transparent 60%), #07090d;
+  padding: 5.5rem 0 6rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+}
+
+.chi-siamo-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+/* Colonna Sinistra: Media / Fotografia */
+.chi-siamo-media {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background-color: #0b0f16;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.03);
+  aspect-ratio: 4 / 3;
+  transition: border-color var(--transition-smooth), box-shadow var(--transition-smooth), transform var(--transition-smooth);
+}
+
+.chi-siamo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chi-siamo-media:hover {
+  border-color: rgba(141, 234, 32, 0.35);
+  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.65), 0 0 24px rgba(141, 234, 32, 0.12);
+  transform: translateY(-3px);
+}
+
+.chi-siamo-media:hover .chi-siamo-img {
+  transform: scale(1.03);
+}
+
+/* Colonna Destra: Contenuto Istituzionale */
+.chi-siamo-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Eyebrow con barretta verde */
+.chi-siamo-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 0.875rem;
+}
+
+.chi-siamo-eyebrow-bar {
+  width: 24px;
+  height: 3px;
+  background-color: var(--color-brand-primary);
+  border-radius: 2px;
+}
+
+.chi-siamo-eyebrow-text {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* Titolo Principale H2 */
+.chi-siamo-title {
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.18;
+  color: var(--color-text-white);
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+/* Paragrafo Istituzionale */
+.chi-siamo-description {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin-bottom: 2.25rem;
+  max-width: 580px;
+}
+
+/* I Tre Differenziatori */
+.chi-siamo-features {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+  width: 100%;
+}
+
+.chi-siamo-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: transform var(--transition-fast);
+}
+
+.chi-siamo-feature-item:hover {
+  transform: translateY(-2px);
+}
+
+.chi-siamo-feature-icon {
+  width: 28px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
-}
-
-.placeholder-inner {
-  max-width: 600px;
-  text-align: center;
-  padding: 2.5rem;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--color-border-subtle);
-  border-radius: 12px;
-}
-
-.placeholder-tag {
-  display: inline-block;
-  padding: 4px 12px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  flex-shrink: 0;
   color: var(--color-brand-primary);
-  background: rgba(141, 234, 32, 0.1);
-  border-radius: 9999px;
-  margin-bottom: 1rem;
+  transition: transform var(--transition-fast);
 }
 
-.placeholder-title {
-  font-size: 1.5rem;
+.feature-icon-svg,
+.chi-siamo-feature-icon .feature-icon-svg {
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  max-width: 26px;
+  display: block;
+}
+
+.chi-siamo-feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.chi-siamo-feature-text .feature-title {
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--color-text-white);
-  margin-bottom: 0.75rem;
+  line-height: 1.25;
 }
 
-.placeholder-desc {
-  font-size: 0.925rem;
+.chi-siamo-feature-text .feature-sub {
+  font-size: 0.8125rem;
   color: var(--color-text-muted);
-  line-height: 1.6;
+  line-height: 1.25;
 }
 
-/* --------------------------------------------------------------------------
-   11. ACCESSIBILITÀ: PREFERS-REDUCED-MOTION
-   -------------------------------------------------------------------------- */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+/* Pulsante Istituzionale Outline */
+.btn-chi-siamo-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.85rem;
+  border-radius: 9999px;
+  border: 1.5px solid var(--color-brand-primary);
+  background-color: transparent;
+  color: var(--color-text-white);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.btn-chi-siamo-outline .btn-arrow {
+  color: var(--color-brand-primary);
+  font-size: 1.15rem;
+  line-height: 1;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.btn-chi-siamo-outline:hover,
+.btn-chi-siamo-outline:focus-visible {
+  background-color: var(--color-brand-primary);
+  color: var(--color-brand-dark);
+  box-shadow: 0 4px 16px rgba(141, 234, 32, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn-chi-siamo-outline:hover .btn-arrow,
+.btn-chi-siamo-outline:focus-visible .btn-arrow {
+  color: var(--color-brand-dark);
+  transform: translateX(4px);
+}
+
+.btn-chi-siamo-outline:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 3px;
+}
+
+/* Responsività Sezione Chi Siamo */
+@media (max-width: 1024px) and (min-width: 641px) {
+  .chi-siamo-section {
+    padding: 4.5rem 0 5rem 0;
+  }
+
+  .chi-siamo-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .chi-siamo-title {
+    font-size: clamp(1.85rem, 2.8vw, 2.25rem);
+  }
+
+  .chi-siamo-features {
+    gap: 1.25rem;
+    flex-wrap: wrap;
   }
 }
 
+@media (max-width: 640px) {
+  .chi-siamo-section {
+    padding: 3.5rem 0 4rem 0;
+  }
+
+  .chi-siamo-container {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+
+  .chi-siamo-media {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 14px;
+  }
+
+  .chi-siamo-title {
+    font-size: 1.85rem;
+  }
+
+  .chi-siamo-features {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.15rem;
+    width: 100%;
+  }
+
+  .chi-siamo-feature-item {
+    width: 100%;
+  }
+
+  .btn-chi-siamo-outline {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   14. SEZIONE PERCHÉ SCEGLIERCI (Etapa 6 - Riproduzione Fedele Mockup)
+   Fondo con immagine in background a destra, 4 colonne orizzontali a sinistra
+   ========================================================================== */
+.perche-sceglierci-section {
+  position: relative;
+  background-color: #f4f6f7;
+  background-image: url('../assets/images/perche-sceglierci-bg.webp');
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: cover;
+  padding: 5.5rem 0 6rem 0;
+  color: var(--color-text-heading-dark);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* Container Istituzionale Allineato */
+.perche-container {
+  position: relative;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 2.75rem;
+  z-index: 2;
+}
+
+/* Header a Sinistra (Desktop) */
+.perche-header {
+  width: 58%;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Eyebrow con Barra Verde-Limone */
+.perche-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.75rem;
+}
+
+.perche-eyebrow-bar {
+  display: inline-block;
+  width: 22px;
+  height: 3px;
+  background-color: var(--color-brand-primary);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(141, 234, 32, 0.45);
+}
+
+.perche-eyebrow-text {
+  font-size: 0.80rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+/* Titolo H2 dal Mockup */
+.perche-title {
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--color-text-heading-dark); /* #090d14 */
+  margin: 0 0 0.85rem 0;
+}
+
+/* Descrizione del Mockup */
+.perche-description {
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0;
+  max-width: 560px;
+}
+
+/* 4 Punti di Forza: 4 Colonne Orizzontali con Divisori su Desktop */
+.perche-features {
+  width: 58%;
+  max-width: 760px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: start;
+}
+
+.perche-feature-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 0 1.25rem;
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  transition: transform var(--transition-fast);
+}
+
+.perche-feature-item:first-child {
+  padding-left: 0;
+}
+
+.perche-feature-item:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.perche-feature-item:hover {
+  transform: translateY(-2px);
+}
+
+.perche-feature-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--color-brand-primary); /* #8dea20 */
+  transition: transform var(--transition-fast);
+}
+
+.perche-feature-item:hover .perche-feature-icon {
+  transform: scale(1.1);
+}
+
+.feature-svg {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+.perche-feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.feature-main {
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: #090d14;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.feature-sub {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #64748b;
+  line-height: 1.25;
+}
+
+/* Su Desktop la foto mobile è nascosta perché è nel background della sezione */
+.perche-media-mobile {
+  display: none;
+}
+
+/* Notebook & Tablet Grande (861px - 1180px) */
+@media (max-width: 1180px) {
+  .perche-header,
+  .perche-features {
+    width: 60%;
+  }
+
+  .perche-feature-item {
+    padding: 0 0.85rem;
+  }
+
+  .feature-main {
+    font-size: 0.88rem;
+  }
+
+  .feature-sub {
+    font-size: 0.82rem;
+  }
+}
+
+/* Mobile & Tablet (<= 860px): Immagine posizionata sotto al titolo + cards in 2 colonne */
+@media (max-width: 860px) {
+  .perche-sceglierci-section {
+    padding: 3.5rem 0 4rem 0;
+    background-image: none; /* Rimuove lo sfondo orizzontale su mobile */
+    background-color: #f4f6f7;
+  }
+
+  .perche-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .perche-header {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .perche-title {
+    font-size: clamp(1.85rem, 6.5vw, 2.35rem);
+    margin-bottom: 0.65rem;
+  }
+
+  .perche-description {
+    font-size: 0.95rem;
+  }
+
+  /* Fotografia visibile su mobile (sotto al titolo/descrizione) */
+  .perche-media-mobile {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  .perche-img-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+  }
+
+  .perche-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  /* Cards in 2 COLONNE su Mobile */
+  .perche-features {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.4rem 1rem;
+  }
+
+  .perche-feature-item {
+    padding: 0;
+    border-right: none;
+    gap: 0.45rem;
+  }
+
+  .feature-svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .feature-main {
+    font-size: 0.92rem;
+  }
+
+  .feature-sub {
+    font-size: 0.82rem;
+  }
+}
+
+/* Smartphone Stretti (<= 375px) */
+@media (max-width: 375px) {
+  .perche-features {
+    gap: 1.15rem 0.65rem;
+  }
+
+  .feature-main {
+    font-size: 0.86rem;
+  }
+
+  .feature-sub {
+    font-size: 0.76rem;
+  }
+}
+
+/* ==========================================================================
+   15. SEZIONE RECENSIONI (Etapa 7 - Cosa Dicono i Nostri Clienti)
+   Riproduzione fedele del mockup: sfondo scuro satinato, griglia a 3 card
+   con stelle verde-limone ad alta definizione, citazioni eleganti e autori
+   ========================================================================== */
+.recensioni-section {
+  position: relative;
+  background-color: #060a0f;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(141, 234, 32, 0.04) 0%, transparent 55%),
+    linear-gradient(180deg, rgba(6, 10, 15, 0.98) 0%, rgba(8, 13, 19, 1) 100%);
+  padding: 5.5rem 0 6rem 0;
+  color: var(--color-text-white);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+/* Container Centrato Istituzionale */
+.recensioni-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 3.25rem;
+}
+
+/* Header a 2 Colonne: Testi a Sinistra, Bottone Azione a Destra */
+.recensioni-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.recensioni-header-left {
+  max-width: 680px;
+}
+
+/* Eyebrow con Barra Orizzontale Verde-Limone */
+.recensioni-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.75rem;
+}
+
+.recensioni-eyebrow-bar {
+  display: inline-block;
+  width: 22px;
+  height: 3px;
+  background-color: var(--color-brand-primary);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(141, 234, 32, 0.45);
+}
+
+.recensioni-eyebrow-text {
+  font-size: 0.80rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8da2b5;
+}
+
+/* Titolo H2 su Due Righe */
+.recensioni-title {
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--color-text-white);
+  margin: 0 0 0.85rem 0;
+}
+
+.recensioni-title-sub {
+  color: var(--color-text-white);
+}
+
+/* Descrizione del Mockup */
+.recensioni-description {
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* Bottone di Azione: Leggi tutte le recensioni */
+.recensioni-header-right {
+  flex-shrink: 0;
+  margin-bottom: 0.25rem;
+}
+
+.btn-recensioni-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.75rem 1.625rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text-white);
+  background-color: transparent;
+  border: 1.5px solid var(--color-brand-primary);
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all var(--transition-smooth);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-recensioni-outline .btn-arrow {
+  color: var(--color-brand-primary);
+  font-size: 1.15rem;
+  line-height: 1;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.btn-recensioni-outline:hover,
+.btn-recensioni-outline:focus-visible {
+  background-color: var(--color-brand-primary);
+  color: var(--color-brand-dark);
+  box-shadow: 0 4px 16px rgba(141, 234, 32, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn-recensioni-outline:hover .btn-arrow,
+.btn-recensioni-outline:focus-visible .btn-arrow {
+  color: var(--color-brand-dark);
+  transform: translateX(4px);
+}
+
+/* Griglia a 3 Colonne Orizzontali Desktop */
+.recensioni-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  align-items: stretch;
+}
+
+/* Card Singola Recensione */
+.recensione-card {
+  position: relative;
+  background-color: #0d151c;
+  background: linear-gradient(180deg, #101b24 0%, #0a1117 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.recensione-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(141, 234, 32, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55), 0 0 25px rgba(141, 234, 32, 0.1);
+}
+
+/* Valutazione a 5 Stelle Verde-Limone */
+.recensione-stars {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--color-brand-primary);
+  margin-bottom: 1.5rem;
+}
+
+.star-icon {
+  width: 18px;
+  height: 18px;
+  fill: var(--color-brand-primary);
+  color: var(--color-brand-primary);
+  filter: drop-shadow(0 0 4px rgba(141, 234, 32, 0.4));
+  transition: transform var(--transition-fast);
+}
+
+.recensione-card:hover .star-icon {
+  transform: scale(1.08);
+}
+
+/* Citazione / Testo della Recensione */
+.recensione-quote {
+  margin: 0 0 2rem 0;
+  padding: 0;
+  flex-grow: 1;
+}
+
+.recensione-text {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #e2e8f0;
+  margin: 0;
+  font-style: normal;
+  letter-spacing: -0.01em;
+}
+
+/* Footer Card con Autore e Ruolo */
+.recensione-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.recensione-author {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #ffffff;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.recensione-role {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #8da2b5;
+  line-height: 1.3;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive: Tablet e Mobile
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
+  .recensioni-grid {
+    gap: 1.25rem;
+  }
+
+  .recensione-card {
+    padding: 1.85rem 1.5rem;
+  }
+
+  .recensione-text {
+    font-size: 0.94rem;
+  }
+}
+
+@media (max-width: 860px) {
+  .recensioni-section {
+    padding: 3.75rem 0 4.25rem 0;
+  }
+
+  .recensioni-container {
+    gap: 2.25rem;
+  }
+
+  .recensioni-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.4rem;
+  }
+
+  .recensioni-title {
+    font-size: clamp(1.85rem, 6.5vw, 2.35rem);
+    margin-bottom: 0.65rem;
+  }
+
+  .recensioni-header-right {
+    width: 100%;
+  }
+
+  .btn-recensioni-outline {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Grid a 2 Colonne su Tablet */
+  .recensioni-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .recensione-card {
+    padding: 1.75rem 1.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  /* 1 Colonna su Smartphone per Massima Leggibilità */
+  .recensioni-grid {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+
+  .recensione-card {
+    padding: 1.6rem 1.35rem;
+  }
+
+  .recensione-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
+
+/* ==========================================================================
+   16. SEZIONE FAQ (Etapa 8 - Domande Frequenti)
+   Riproduzione fedele del mockup: sfondo chiaro, griglia a 2 colonne,
+   interazione accordion fluida, accessibilità e rispetto prefers-reduced-motion
+   ========================================================================== */
+.faq-section {
+  position: relative;
+  background-color: #f7f9fa;
+  padding: 5.5rem 0 6rem 0;
+  color: var(--color-text-heading-dark);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+}
+
+/* Container Centrato Istituzionale */
+.faq-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+/* Header a 2 Colonne: Testi a Sinistra, Bottone Azione a Destra */
+.faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.faq-header-left {
+  max-width: 680px;
+}
+
+/* Eyebrow con Barra Orizzontale Verde-Limone */
+.faq-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.75rem;
+}
+
+.faq-eyebrow-bar {
+  display: inline-block;
+  width: 22px;
+  height: 3px;
+  background-color: var(--color-brand-primary);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(141, 234, 32, 0.45);
+}
+
+.faq-eyebrow-text {
+  font-size: 0.80rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+/* Titolo H2 dal Mockup */
+.faq-title {
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--color-text-heading-dark);
+  margin: 0 0 0.85rem 0;
+}
+
+/* Descrizione del Mockup */
+.faq-description {
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0;
+}
+
+/* Bottone di Azione Header: Tutte le FAQ */
+.faq-header-right {
+  flex-shrink: 0;
+  margin-bottom: 0.25rem;
+}
+
+.btn-faq-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.75rem 1.625rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text-heading-dark);
+  background-color: transparent;
+  border: 1.5px solid var(--color-brand-primary);
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all var(--transition-smooth);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-faq-outline .btn-arrow {
+  color: var(--color-brand-primary);
+  font-size: 1.15rem;
+  line-height: 1;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.btn-faq-outline:hover,
+.btn-faq-outline:focus-visible {
+  background-color: var(--color-brand-primary);
+  color: var(--color-brand-dark);
+  box-shadow: 0 4px 16px rgba(141, 234, 32, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn-faq-outline:hover .btn-arrow,
+.btn-faq-outline:focus-visible .btn-arrow {
+  color: var(--color-brand-dark);
+  transform: translateX(4px);
+}
+
+/* Griglia FAQ a 2 Colonne nel Desktop */
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 3.5rem;
+  align-items: start;
+}
+
+.faq-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Singolo Elemento FAQ con Separatore Inferiore */
+.faq-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  transition: border-color var(--transition-fast);
+}
+
+.faq-item:first-child {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Pulsante Interattivo (Trigger WAI-ARIA) */
+.faq-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.4rem 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  outline: none;
+  transition: color var(--transition-fast);
+}
+
+.faq-question {
+  font-family: var(--font-primary);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text-heading-dark);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  transition: color var(--transition-fast);
+}
+
+.faq-trigger:hover .faq-question {
+  color: #000000;
+}
+
+.faq-trigger:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Icona Chevron Rotante */
+.faq-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.03);
+  color: #64748b;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.faq-icon-svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-trigger:hover .faq-icon {
+  background: rgba(141, 234, 32, 0.15);
+  color: #2e6205;
+}
+
+/* Stato Attivo / Aperto */
+.faq-trigger[aria-expanded="true"] .faq-question {
+  color: #000000;
+}
+
+.faq-trigger[aria-expanded="true"] .faq-icon {
+  background: var(--color-brand-primary);
+  color: var(--color-brand-dark);
+  transform: rotate(180deg);
+}
+
+/* Pannello Risposta con Transizione CSS Grid a 0fr -> 1fr */
+.faq-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  opacity: 0;
+}
+
+.faq-panel.is-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.faq-panel-inner {
+  overflow: hidden;
+}
+
+.faq-answer {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #475569;
+  margin: 0;
+  padding: 0 0 1.5rem 0;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive: Tablet e Mobile
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .faq-grid {
+    gap: 0 2.25rem;
+  }
+
+  .faq-question {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 860px) {
+  .faq-section {
+    padding: 3.75rem 0 4.25rem 0;
+  }
+
+  .faq-container {
+    gap: 2.25rem;
+  }
+
+  .faq-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.4rem;
+  }
+
+  .faq-title {
+    font-size: clamp(1.85rem, 6.5vw, 2.35rem);
+    margin-bottom: 0.65rem;
+  }
+
+  .faq-header-right {
+    width: 100%;
+  }
+
+  .btn-faq-outline {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* 1 Colonna su Tablet e Smartphone */
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-col:last-child .faq-item:first-child {
+    border-top: none; /* Evita doppio bordo tra le due colonne impilate */
+  }
+
+  .faq-trigger {
+    padding: 1.25rem 0;
+  }
+
+  .faq-question {
+    font-size: 0.98rem;
+  }
+
+  .faq-answer {
+    font-size: 0.94rem;
+    padding-bottom: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-panel,
+  .faq-icon,
+  .faq-icon-svg {
+    transition: none !important;
+  }
+}
+
+/* ==========================================================================
+   17. SEZIONE CONTATTI (Etapa 9 - Riproduzione Fedele Mockup)
+   Sfondo esteso con carrozzeria e fanali a LED in background a destra,
+   testi e canali diretti di contatto a sinistra.
+   Comportamento background ottimizzato per Desktop, Notebook, Tablet e Mobile.
+   ========================================================================== */
+.contatti-section {
+  position: relative;
+  background-color: #06090d;
+  background-image: 
+    linear-gradient(90deg, rgba(6, 9, 13, 0.98) 0%, rgba(6, 9, 13, 0.92) 42%, rgba(6, 9, 13, 0.35) 68%, transparent 88%),
+    url('../assets/images/contatti-bg.webp');
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: cover;
+  padding: 5.5rem 0 6rem 0;
+  color: var(--color-text-white);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+/* Container Istituzionale Allineato */
+.contatti-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  position: relative;
+  z-index: 2;
+}
+
+/* Colonna Testi & Azioni a Sinistra */
+.contatti-content {
+  width: 56%;
+  max-width: 740px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Eyebrow con Barra Verde-Limone */
+.contatti-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.75rem;
+}
+
+.contatti-eyebrow-bar {
+  display: inline-block;
+  width: 22px;
+  height: 3px;
+  background-color: var(--color-brand-primary);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(141, 234, 32, 0.45);
+}
+
+.contatti-eyebrow-text {
+  font-size: 0.80rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8da2b5;
+}
+
+/* Titolo H2 su Due Righe */
+.contatti-title {
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--color-text-white);
+  margin: 0 0 0.85rem 0;
+}
+
+.contatti-title-sub {
+  color: var(--color-text-white);
+}
+
+/* Descrizione del Mockup */
+.contatti-description {
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  margin: 0 0 2.25rem 0;
+  max-width: 540px;
+}
+
+/* Cluster Canali di Contatto: Bottone WhatsApp a Sinistra + Lista Recapiti a Destra */
+.contatti-action-cluster {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+  flex-wrap: wrap;
+}
+
+/* Bottone WhatsApp Primario (Mockup: con freccia a destra) */
+.contatti-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0.85rem 1.625rem;
+  background-color: var(--color-brand-primary);
+  color: var(--color-brand-dark);
+  font-family: var(--font-primary);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  border-radius: 9999px;
+  text-decoration: none;
+  box-shadow: 0 4px 18px rgba(141, 234, 32, 0.35);
+  transition: transform var(--transition-smooth), background-color var(--transition-smooth), box-shadow var(--transition-smooth);
+  white-space: nowrap;
+}
+
+.contatti-whatsapp-btn .whatsapp-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.contatti-whatsapp-btn .btn-arrow {
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: transform var(--transition-fast);
+}
+
+.contatti-whatsapp-btn:hover,
+.contatti-whatsapp-btn:focus-visible {
+  background-color: var(--color-brand-hover);
+  box-shadow: 0 6px 24px rgba(141, 234, 32, 0.5);
+  transform: translateY(-2px);
+  color: var(--color-brand-dark);
+}
+
+.contatti-whatsapp-btn:hover .btn-arrow,
+.contatti-whatsapp-btn:focus-visible .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Lista Recapiti Diretti */
+.contatti-direct-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contatti-direct-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.contatti-direct-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-brand-primary);
+  flex-shrink: 0;
+}
+
+.contatti-direct-link,
+.contatti-direct-text {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.contatti-direct-link:hover,
+.contatti-direct-link:focus-visible {
+  color: var(--color-brand-primary);
+  outline: none;
+}
+
+/* ==========================================================================
+   Ottimizzazione Background per Notebook, Tablet e Mobile
+   ========================================================================== */
+
+/* 1. Notebook Grande e Schermi Medi (1025px - 1280px) */
+@media (max-width: 1280px) {
+  .contatti-section {
+    background-image: 
+      linear-gradient(90deg, rgba(6, 9, 13, 0.98) 0%, rgba(6, 9, 13, 0.92) 48%, rgba(6, 9, 13, 0.4) 72%, transparent 90%),
+      url('../assets/images/contatti-bg.webp');
+    background-position: right center;
+    background-size: cover;
+  }
+
+  .contatti-content {
+    width: 60%;
+    max-width: 680px;
+  }
+}
+
+/* 2. Notebook Compatto e Tablet Orizzontale (861px - 1024px) */
+@media (max-width: 1024px) {
+  .contatti-section {
+    padding: 5rem 0 5.5rem 0;
+    background-image: 
+      linear-gradient(90deg, rgba(6, 9, 13, 0.98) 0%, rgba(6, 9, 13, 0.94) 54%, rgba(6, 9, 13, 0.5) 78%, rgba(6, 9, 13, 0.15) 100%),
+      url('../assets/images/contatti-bg.webp');
+    background-position: 85% center;
+    background-size: cover;
+  }
+
+  .contatti-content {
+    width: 66%;
+    max-width: 620px;
+  }
+
+  .contatti-action-cluster {
+    gap: 1.75rem;
+  }
+}
+
+/* 3. Tablet Verticale (601px - 860px) */
+@media (max-width: 860px) {
+  .contatti-section {
+    padding: 4.5rem 0 5rem 0;
+    background-image: 
+      linear-gradient(90deg, rgba(6, 9, 13, 0.98) 0%, rgba(6, 9, 13, 0.94) 62%, rgba(6, 9, 13, 0.6) 85%, rgba(6, 9, 13, 0.25) 100%),
+      url('../assets/images/contatti-bg.webp');
+    background-position: 85% center;
+    background-size: cover;
+  }
+
+  .contatti-content {
+    width: 78%;
+    max-width: 580px;
+  }
+
+  .contatti-title {
+    font-size: clamp(1.85rem, 6vw, 2.35rem);
+    margin-bottom: 0.65rem;
+  }
+
+  .contatti-description {
+    margin-bottom: 1.75rem;
+  }
+
+  .contatti-action-cluster {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+}
+
+/* 4. Mobile e Smartphone (<= 600px) */
+@media (max-width: 600px) {
+  .contatti-section {
+    padding: 3.75rem 0 4.25rem 0;
+    background-image: 
+      linear-gradient(180deg, rgba(6, 9, 13, 0.96) 0%, rgba(6, 9, 13, 0.86) 40%, rgba(6, 9, 13, 0.94) 100%),
+      url('../assets/images/contatti-bg.webp');
+    background-position: 72% center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .contatti-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .contatti-title {
+    font-size: clamp(1.8rem, 6.5vw, 2.25rem);
+  }
+
+  .contatti-description {
+    font-size: 0.96rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .contatti-action-cluster {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.75rem;
+  }
+
+  .contatti-whatsapp-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .contatti-direct-list {
+    gap: 0.85rem;
+  }
+
+  .contatti-direct-link,
+  .contatti-direct-text {
+    font-size: 0.92rem;
+  }
+}

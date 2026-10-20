@@ -21,8 +21,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,800;1,900&display=swap" rel="stylesheet">
 
-  <!-- Foglio di Stile Principale -->
-  <link rel="stylesheet" href="css/style.css">
+  <!-- Foglio di Stile Principale (con cache buster per aggiornamento immediato) -->
+  <link rel="stylesheet" href="css/style.css?v=9.1">
 </head>
 <body>
 
@@ -682,30 +682,666 @@
       </div>
     </section>
 
-    <!-- Sezione Chi Siamo (Ancora: #chi-siamo) -->
-    <section id="chi-siamo" class="section-anchor-placeholder" aria-label="Sezione Chi Siamo">
-      <div class="placeholder-inner">
-        <span class="placeholder-tag">Predisposizione Ancora</span>
-        <h2 class="placeholder-title">Chi Siamo</h2>
-        <p class="placeholder-desc">Destinazione pronta per la presentazione della passione, esperienza e certificazioni.</p>
+    <!-- ======================================================================
+         SEZIONE CHI SIAMO (ETAPA 5 - PASSIONE, ESPERIENZA E ATTENZIONE AI DETTAGLI)
+         Presentazione istituzionale con fotografia professionale e 3 differenziatori
+         ====================================================================== -->
+    <section id="chi-siamo" class="chi-siamo-section" aria-labelledby="chi-siamo-heading">
+      <div class="chi-siamo-container">
+        
+        <!-- Colonna Sinistra: Fotografia del professionista in car detailing -->
+        <div class="chi-siamo-media">
+          <img 
+            src="assets/images/chi-siamo-detailer.webp" 
+            alt="Professionista di Pro Detailing concentrato nella lucidatura e cura meticolosa della carrozzeria auto" 
+            class="chi-siamo-img"
+            loading="eager"
+            decoding="async"
+            width="1200"
+            height="896"
+          >
+        </div>
+
+        <!-- Colonna Destra: Contenuto Istituzionale -->
+        <div class="chi-siamo-content">
+          
+          <!-- Eyebrow con barretta verde-limone -->
+          <div class="chi-siamo-eyebrow">
+            <span class="chi-siamo-eyebrow-bar" aria-hidden="true"></span>
+            <span class="chi-siamo-eyebrow-text">CHI SIAMO</span>
+          </div>
+
+          <!-- Titolo Principale H2 -->
+          <h2 id="chi-siamo-heading" class="chi-siamo-title">
+            Passione, esperienza<br>e attenzione ai dettagli
+          </h2>
+
+          <!-- Paragrafo Istituzionale -->
+          <p class="chi-siamo-description">
+            Pro Detailing nasce dalla passione per le auto e dal desiderio di offrire un servizio di detailing di alta qualità. Con anni di esperienza nel settore, utilizziamo prodotti professionali e tecniche all'avanguardia per prenderci cura di ogni dettaglio della tua auto.
+          </p>
+
+          <!-- I Tre Differenziatori -->
+          <div class="chi-siamo-features" role="list" aria-label="I nostri punti di forza">
+            
+            <!-- Differenziale 1: Esperienza nel settore -->
+            <div class="chi-siamo-feature-item" role="listitem">
+              <div class="chi-siamo-feature-icon" aria-hidden="true">
+                <svg class="feature-icon-svg" width="24" height="24" style="width:24px;height:24px;min-width:24px;max-width:24px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="5.5" />
+                  <path d="M8.21 13.89 7 22l5-3 5 3-1.21-8.11" />
+                  <polyline points="10 7.5 11.5 9 14.5 6" />
+                </svg>
+              </div>
+              <div class="chi-siamo-feature-text">
+                <span class="feature-title">Esperienza</span>
+                <span class="feature-sub">nel settore</span>
+              </div>
+            </div>
+
+            <!-- Differenziale 2: Prodotti professionali -->
+            <div class="chi-siamo-feature-item" role="listitem">
+              <div class="chi-siamo-feature-icon" aria-hidden="true">
+                <svg class="feature-icon-svg" width="24" height="24" style="width:24px;height:24px;min-width:24px;max-width:24px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10 2h4" />
+                  <path d="M12 2v4" />
+                  <path d="M9 6h6a1 1 0 0 1 1 1v2.5a4.5 4.5 0 0 1-.5 2l-1 2v6.5a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2V13.5l-1-2a4.5 4.5 0 0 1-.5-2V7a1 1 0 0 1 1-1Z" />
+                  <line x1="8.5" y1="16" x2="15.5" y2="16" stroke-dasharray="1.5 1.5" />
+                </svg>
+              </div>
+              <div class="chi-siamo-feature-text">
+                <span class="feature-title">Prodotti</span>
+                <span class="feature-sub">professionali</span>
+              </div>
+            </div>
+
+            <!-- Differenziale 3: Risultati di qualità -->
+            <div class="chi-siamo-feature-item" role="listitem">
+              <div class="chi-siamo-feature-icon" aria-hidden="true">
+                <svg class="feature-icon-svg" width="24" height="24" style="width:24px;height:24px;min-width:24px;max-width:24px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <polyline points="9 12 11 14 15 10" />
+                </svg>
+              </div>
+              <div class="chi-siamo-feature-text">
+                <span class="feature-title">Risultati</span>
+                <span class="feature-sub">di qualità</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Pulsante Istituzionale Outline Verde -->
+          <div class="chi-siamo-action">
+            <a href="#chi-siamo" class="btn-chi-siamo-outline" aria-label="Scopri di più sulla nostra storia e professionalità">
+              <span>Scopri di più su di noi</span>
+              <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+
+        </div>
+
       </div>
     </section>
 
-    <!-- Sezione FAQ (Ancora: #faq) -->
-    <section id="faq" class="section-anchor-placeholder" aria-label="Sezione FAQ">
-      <div class="placeholder-inner">
-        <span class="placeholder-tag">Predisposizione Ancora</span>
-        <h2 class="placeholder-title">Domande Frequenti (FAQ)</h2>
-        <p class="placeholder-desc">Destinazione pronta per i quesiti più comuni su durata, lavaggio e prenotazioni.</p>
+    <!-- ==========================================================================
+         SEZIONE PERCHÉ SCEGLIERCI (Etapa 6)
+         Fondo chiaro premium, composizione a 2 colonne, foto microfibra e 4 differenziali
+         ========================================================================== -->
+    <section id="perche-sceglierci" class="perche-sceglierci-section" aria-labelledby="perche-sceglierci-title">
+      <div class="perche-container">
+        
+        <!-- Header Istituzionale (Eyebrow + Titolo + Descrizione Mockup) -->
+        <div class="perche-header">
+          <!-- Eyebrow con Indicatore Orizzontale Verde-Limone -->
+          <div class="perche-eyebrow">
+            <span class="perche-eyebrow-bar" aria-hidden="true"></span>
+            <span class="perche-eyebrow-text">PERCHÉ SCEGLIERCI</span>
+          </div>
+
+          <!-- Titolo Principale H2 Esatto del Mockup -->
+          <h2 id="perche-sceglierci-title" class="perche-title">
+            Più di un semplice lavaggio
+          </h2>
+
+          <!-- Descrizione Esatta del Mockup -->
+          <p class="perche-description">
+            Il nostro obiettivo è proteggere il tuo veicolo e farlo tornare come nuovo, con un servizio personalizzato e su misura.
+          </p>
+        </div>
+
+        <!-- Fotografia Mobile (Visibile SOLO su Mobile/Tablet sotto al titolo; su desktop la foto è nel background della sezione) -->
+        <div class="perche-media-mobile">
+          <div class="perche-img-wrapper">
+            <img 
+              src="assets/images/perche-sceglierci-microfibra.webp" 
+              alt="Cura professionale e detailing della carrozzeria con panno in microfibra verde su vernice nera lucida" 
+              class="perche-img" 
+              width="600" 
+              height="450" 
+              loading="lazy" 
+              decoding="async"
+            >
+          </div>
+        </div>
+
+        <!-- 4 Punti di Forza (4 Colonne Orizzontali su Desktop, 2 Colonne su Mobile) -->
+        <div class="perche-features" role="list" aria-label="I quattro punti di forza di Pro Detailing">
+          
+          <!-- Differenziale 1: Trattamenti su misura per ogni veicolo -->
+          <div class="perche-feature-item" role="listitem">
+            <div class="perche-feature-icon" aria-hidden="true">
+              <svg class="feature-svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10l-2-4H7L5 10s-2.7.6-4.5 1.1C-.3 11.3-1 12.1-1 13v3c0 .6.4 1 1 1h2" />
+                <circle cx="7" cy="17" r="2.5" />
+                <circle cx="17" cy="17" r="2.5" />
+                <path d="M9.5 17h5" />
+              </svg>
+            </div>
+            <div class="perche-feature-text">
+              <span class="feature-main">Trattamenti su misura</span>
+              <span class="feature-sub">per ogni veicolo</span>
+            </div>
+          </div>
+
+          <!-- Differenziale 2: Personale qualificato e appassionato -->
+          <div class="perche-feature-item" role="listitem">
+            <div class="perche-feature-icon" aria-hidden="true">
+              <svg class="feature-svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="5.5" />
+                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+                <polyline points="10 7.5 11.5 9 14.5 6" />
+              </svg>
+            </div>
+            <div class="perche-feature-text">
+              <span class="feature-main">Personale qualificato</span>
+              <span class="feature-sub">e appassionato</span>
+            </div>
+          </div>
+
+          <!-- Differenziale 3: Materiali e prodotti di alta qualità -->
+          <div class="perche-feature-item" role="listitem">
+            <div class="perche-feature-icon" aria-hidden="true">
+              <svg class="feature-svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m21 16-9 5-9-5V8l9-5 9 5v8z" />
+                <path d="M3.27 6.96 12 12.01l8.73-5.05" />
+                <path d="M12 22.08V12" />
+              </svg>
+            </div>
+            <div class="perche-feature-text">
+              <span class="feature-main">Materiali e prodotti</span>
+              <span class="feature-sub">di alta qualità</span>
+            </div>
+          </div>
+
+          <!-- Differenziale 4: Risultati duraturi e garantiti -->
+          <div class="perche-feature-item" role="listitem">
+            <div class="perche-feature-icon" aria-hidden="true">
+              <svg class="feature-svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+            </div>
+            <div class="perche-feature-text">
+              <span class="feature-main">Risultati duraturi</span>
+              <span class="feature-sub">e garantiti</span>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </section>
 
-    <!-- Sezione Contatti (Ancora: #contatti) -->
-    <section id="contatti" class="section-anchor-placeholder" aria-label="Sezione Contatti">
-      <div class="placeholder-inner">
-        <span class="placeholder-tag">Predisposizione Ancora</span>
-        <h2 class="placeholder-title">Contatti & Preventivi</h2>
-        <p class="placeholder-desc">Destinazione pronta per il form contatti, recapiti diretti e mappa di sede.</p>
+    <!-- =========================================================================
+         ETAPA 7: SEZIONE RECENSIONI (COSA DICONO I NOSTRI CLIENTI)
+         Riproduzione fedele del mockup: sfondo scuro satinato, eyebrow con barra verde,
+         titolo su due righe, pulsante 'Leggi tutte le recensioni' a destra e
+         griglia a 3 card con stelle verde-limone ad alta definizione.
+         ========================================================================= -->
+    <section id="recensioni" class="recensioni-section" aria-labelledby="recensioni-title">
+      <div class="recensioni-container">
+        
+        <!-- Header della Sezione (Eyebrow, Titolo e Sottotitolo a Sinistra + Bottone Azione a Destra) -->
+        <div class="recensioni-header">
+          <div class="recensioni-header-left">
+            <!-- Eyebrow con Barra Orizzontale Verde-Limone -->
+            <div class="recensioni-eyebrow">
+              <span class="recensioni-eyebrow-bar" aria-hidden="true"></span>
+              <span class="recensioni-eyebrow-text">COSA DICONO I NOSTRI CLIENTI</span>
+            </div>
+
+            <!-- Titolo Principale su Due Righe (Esatto del Mockup) -->
+            <h2 id="recensioni-title" class="recensioni-title">
+              La fiducia dei nostri clienti<br>
+              <span class="recensioni-title-sub">è la nostra forza</span>
+            </h2>
+
+            <!-- Descrizione Introduttiva (Esatta del Mockup) -->
+            <p class="recensioni-description">
+              Recensioni reali di chi ha scelto Pro Detailing.
+            </p>
+          </div>
+
+          <!-- Pulsante di Azione a Destra: Leggi tutte le recensioni -->
+          <div class="recensioni-header-right">
+            <a href="#contatti" class="btn-recensioni-outline" aria-label="Leggi tutte le recensioni dei nostri clienti">
+              <span>Leggi tutte le recensioni</span>
+              <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- =====================================================================
+             GRIGLIA RECENSIONI CLIENTI (3 Colonne Desktop / 2 Colonne Tablet / 1 Colonna Mobile)
+             NOTA DI CONFORMITÀ & PREDISPOSIZIONE DATI VERIFICATI:
+             I testi sottostanti riproducono fedelmente le card dimostrative del mockup originale.
+             Questa struttura è completamente predisposta per ospitare feed di recensioni reali
+             e verificate (es. Google Places API, Trustpilot o recensioni autenticate) non appena
+             disponibili, senza alterare il layout grafico né le classi CSS.
+             ===================================================================== -->
+        <div class="recensioni-grid" role="list" aria-label="Valutazioni ed esperienze dei clienti">
+          
+          <!-- Card 1: Marco R. -->
+          <article class="recensione-card" role="listitem">
+            <!-- Valutazione a 5 Stelle Verde-Limone -->
+            <div class="recensione-stars" role="img" aria-label="Valutazione: 5 stelle su 5">
+              <svg class="star-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+              <svg class="star-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+              <svg class="star-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+              <svg class="star-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+              <svg class="star-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            
+            <blockquote class="recensione-quote">
+              <p class="recensione-text">&ldquo;Servizio impeccabile! La mia auto non era mai stata cos&igrave; brillante. Consigliatissimo!&rdquo;</p>
+            </blockquote>
+
+            <footer class="recensione-footer">
+              <cite class="recensione-author">Marco R.</cite>
+              <span class="recensione-role">Cliente Pro Detailing</span>
+            </footer>
+          </article>
+
+          <!-- Card 2: Alessandro T. -->
+          <article class="recensione-card" role="listitem">
+            <!-- Valutazione a 5 Stelle Verde-Limone -->
+            <div class="recensione-stars" role="img" aria-label="Valutazione: 5 stelle su 5">
+              <svg class="star-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+              <svg class="star-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+              <svg class="star-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+              <svg class="star-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+              <svg class="star-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            
+            <blockquote class="recensione-quote">
+              <p class="recensione-text">&ldquo;Professionalit&agrave;, cortesia e un risultato oltre le aspettative. Torner&ograve; sicuramente!&rdquo;</p>
+            </blockquote>
+
+            <footer class="recensione-footer">
+              <cite class="recensione-author">Alessandro T.</cite>
+              <span class="recensione-role">Cliente Pro Detailing</span>
+            </footer>
+          </article>
+
+          <!-- Card 3: Luca F. -->
+          <article class="recensione-card" role="listitem">
+            <!-- Valutazione a 5 Stelle Verde-Limone -->
+            <div class="recensione-stars" role="img" aria-label="Valutazione: 5 stelle su 5">
+              <svg class="star-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+              <svg class="star-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+              <svg class="star-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+              <svg class="star-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+              <svg class="star-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            
+            <blockquote class="recensione-quote">
+              <p class="recensione-text">&ldquo;Attenti ad ogni dettaglio, veramente i migliori in zona. La mia auto sembra nuova!&rdquo;</p>
+            </blockquote>
+
+            <footer class="recensione-footer">
+              <cite class="recensione-author">Luca F.</cite>
+              <span class="recensione-role">Cliente Pro Detailing</span>
+            </footer>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+<!-- =========================================================================
+         ETAPA 8: SEZIONE FAQ (DOMANDE FREQUENTI)
+         Riproduzione fedele del mockup: sfondo chiaro, eyebrow con barra verde,
+         titolo 'Le domande più frequenti', descrizione, pulsante 'Tutte le FAQ'
+         e griglia a 2 colonne di quesiti interattivi con accordion accessibile.
+         ========================================================================= -->
+    <section id="faq" class="faq-section" aria-labelledby="faq-title">
+      <div class="faq-container">
+        
+        <!-- Header della Sezione (Eyebrow, Titolo e Sottotitolo a Sinistra + Bottone Azione a Destra) -->
+        <div class="faq-header">
+          <div class="faq-header-left">
+            <!-- Eyebrow con Barra Orizzontale Verde-Limone -->
+            <div class="faq-eyebrow">
+              <span class="faq-eyebrow-bar" aria-hidden="true"></span>
+              <span class="faq-eyebrow-text">FAQ</span>
+            </div>
+
+            <!-- Titolo Principale Esatto del Mockup -->
+            <h2 id="faq-title" class="faq-title">
+              Le domande più frequenti
+            </h2>
+
+            <!-- Descrizione Introduttiva Esatta del Mockup -->
+            <p class="faq-description">
+              Trovi qui le risposte alle domande più comuni sui nostri servizi di detailing.
+            </p>
+          </div>
+
+          <!-- Pulsante di Azione a Destra: Tutte le FAQ -->
+          <div class="faq-header-right">
+            <a href="#contatti" class="btn-faq-outline" aria-label="Visualizza tutte le domande frequenti o richiedi supporto">
+              <span>Tutte le FAQ</span>
+              <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- =====================================================================
+             GRIGLIA FAQ A 2 COLONNE (ACCORDION INTERATTIVO E ACCESSIBILE)
+             6 Domande esatte del Mockup originale, conformi a WAI-ARIA
+             ===================================================================== -->
+        <div class="faq-grid">
+          
+          <!-- COLONNA SINISTRA (Q1, Q2, Q3) -->
+          <div class="faq-col">
+            
+            <!-- Domanda 1 -->
+            <div class="faq-item">
+              <button 
+                type="button" 
+                class="faq-trigger" 
+                aria-expanded="false" 
+                aria-controls="faq-ans-1" 
+                id="faq-btn-1"
+              >
+                <span class="faq-question">Quanto dura un trattamento ceramico?</span>
+                <span class="faq-icon" aria-hidden="true">
+                  <svg class="faq-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </button>
+              <div id="faq-ans-1" class="faq-panel" role="region" aria-labelledby="faq-btn-1">
+                <div class="faq-panel-inner">
+                  <p class="faq-answer">
+                    La durata dipende dal tipo di trattamento ceramico scelto e dalla cura successiva del veicolo: varia generalmente da 12 mesi fino a diversi anni con prodotti professionali e corretta manutenzione periodica.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Domanda 2 -->
+            <div class="faq-item">
+              <button 
+                type="button" 
+                class="faq-trigger" 
+                aria-expanded="false" 
+                aria-controls="faq-ans-2" 
+                id="faq-btn-2"
+              >
+                <span class="faq-question">Quanto tempo richiede un lavaggio completo?</span>
+                <span class="faq-icon" aria-hidden="true">
+                  <svg class="faq-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </button>
+              <div id="faq-ans-2" class="faq-panel" role="region" aria-labelledby="faq-btn-2">
+                <div class="faq-panel-inner">
+                  <p class="faq-answer">
+                    I tempi dipendono dalle dimensioni e dallo stato iniziale della vettura. Un lavaggio detailing completo esterno e interno richiede solitamente da 2 a 4 ore di lavorazione meticolosa.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Domanda 3 -->
+            <div class="faq-item">
+              <button 
+                type="button" 
+                class="faq-trigger" 
+                aria-expanded="false" 
+                aria-controls="faq-ans-3" 
+                id="faq-btn-3"
+              >
+                <span class="faq-question">&Egrave; possibile prenotare online?</span>
+                <span class="faq-icon" aria-hidden="true">
+                  <svg class="faq-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </button>
+              <div id="faq-ans-3" class="faq-panel" role="region" aria-labelledby="faq-btn-3">
+                <div class="faq-panel-inner">
+                  <p class="faq-answer">
+                    S&igrave;, puoi richiedere comodamente un appuntamento tramite il nostro canale diretto WhatsApp o compilando il modulo contatti sul sito. Ti risponderemo prontamente per concordare data e orario.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- COLONNA DESTRA (Q4, Q5, Q6) -->
+          <div class="faq-col">
+            
+            <!-- Domanda 4 -->
+            <div class="faq-item">
+              <button 
+                type="button" 
+                class="faq-trigger" 
+                aria-expanded="false" 
+                aria-controls="faq-ans-4" 
+                id="faq-btn-4"
+              >
+                <span class="faq-question">Quali sono i metodi di pagamento?</span>
+                <span class="faq-icon" aria-hidden="true">
+                  <svg class="faq-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </button>
+              <div id="faq-ans-4" class="faq-panel" role="region" aria-labelledby="faq-btn-4">
+                <div class="faq-panel-inner">
+                  <p class="faq-answer">
+                    Accettiamo pagamenti tramite le principali carte di credito e debito (Visa, Mastercard, Maestro), bonifico bancario anticipato e contanti entro i limiti previsti dalla legge italiana.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Domanda 5 -->
+            <div class="faq-item">
+              <button 
+                type="button" 
+                class="faq-trigger" 
+                aria-expanded="false" 
+                aria-controls="faq-ans-5" 
+                id="faq-btn-5"
+              >
+                <span class="faq-question">Lavorate anche su auto d'epoca?</span>
+                <span class="faq-icon" aria-hidden="true">
+                  <svg class="faq-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </button>
+              <div id="faq-ans-5" class="faq-panel" role="region" aria-labelledby="faq-btn-5">
+                <div class="faq-panel-inner">
+                  <p class="faq-answer">
+                    Certamente. Trattiamo auto storiche e d'epoca con protocolli conservativi dedicati, impiegando prodotti a pH bilanciato e tecniche specifiche per preservare l'originalit&agrave; di vernici e finiture delicate.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Domanda 6 -->
+            <div class="faq-item">
+              <button 
+                type="button" 
+                class="faq-trigger" 
+                aria-expanded="false" 
+                aria-controls="faq-ans-6" 
+                id="faq-btn-6"
+              >
+                <span class="faq-question">Dove si trova la vostra sede?</span>
+                <span class="faq-icon" aria-hidden="true">
+                  <svg class="faq-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </button>
+              <div id="faq-ans-6" class="faq-panel" role="region" aria-labelledby="faq-btn-6">
+                <div class="faq-panel-inner">
+                  <p class="faq-answer">
+                    Il nostro studio di detailing &egrave; situato a Milano (MI) in Via Roma 123. Riceviamo esclusivamente su appuntamento per dedicare il 100% dell'attenzione ad un solo veicolo alla volta.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+<!-- =========================================================================
+         ETAPA 9: SEZIONE CONTATTI (CONTATTO & PREVENTIVI)
+         Riproduzione fedele del mockup: sfondo esteso con carrozzeria e fanali
+         posteriori a LED in background a destra, testi e canali diretti a sinistra.
+         ========================================================================= -->
+    <section id="contatti" class="contatti-section" aria-labelledby="contatti-title">
+      <div class="contatti-container">
+        
+        <!-- Contenuto Istituzionale & Canali di Contatto (Sinistra) -->
+        <div class="contatti-content">
+          
+          <!-- Eyebrow con Barra Orizzontale Verde-Limone -->
+          <div class="contatti-eyebrow">
+            <span class="contatti-eyebrow-bar" aria-hidden="true"></span>
+            <span class="contatti-eyebrow-text">CONTATTI</span>
+          </div>
+
+          <!-- Titolo Principale Esatto del Mockup -->
+          <h2 id="contatti-title" class="contatti-title">
+            Pronto a far brillare<br>
+            <span class="contatti-title-sub">la tua auto?</span>
+          </h2>
+
+          <!-- Descrizione Introduttiva Esatta del Mockup -->
+          <p class="contatti-description">
+            Contattaci per un preventivo gratuito o per maggiori informazioni sui nostri servizi di detailing.
+          </p>
+
+          <!-- Blocco Canali di Contatto: Bottone WhatsApp + Recapiti Diretti -->
+          <div class="contatti-action-cluster">
+            
+            <!-- Bottone Primario WhatsApp (Mockup: Scrivici su WhatsApp ->) -->
+            <a 
+              href="https://wa.me/390000000000?text=Buongiorno%20Pro%20Detailing%2C%20vorrei%20richiedere%20informazioni%20e%20un%20preventivo%20per%20la%20mia%20auto." 
+              class="btn-whatsapp contatti-whatsapp-btn" 
+              aria-label="Contattaci direttamente su WhatsApp per informazioni e preventivi"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="whatsapp-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.031 2C6.495 2 2 6.495 2 12.031c0 1.956.562 3.869 1.631 5.518L2 22l4.613-1.602a9.98 9.98 0 0 0 5.418 1.564h.005c5.534 0 10.029-4.495 10.029-10.031C22.065 6.495 17.57 2 12.031 2zm5.877 14.195c-.244.688-1.42 1.32-1.956 1.378-.49.052-1.12.074-3.238-.804-2.548-1.056-4.184-3.66-4.312-3.83-.127-.17-1.03-1.372-1.03-2.617 0-1.244.653-1.855.885-2.108.232-.253.507-.317.676-.317.17 0 .338.002.486.01.159.008.37-.061.579.442.212.507.72 1.758.784 1.885.063.127.106.275.021.444-.085.17-.127.275-.254.423-.127.148-.267.33-.38.444-.127.127-.26.265-.112.518.148.254.657 1.082 1.41 1.752.969.865 1.785 1.134 2.039 1.261.254.127.402.106.55-.064.149-.169.635-.74.805-.994.169-.254.338-.212.571-.127.233.085 1.482.698 1.736.825.254.127.423.19.486.3.064.106.064.613-.18 1.301z"/>
+              </svg>
+              <span>Scrivici su WhatsApp</span>
+              <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+
+            <!-- Lista Recapiti Diretti (Telefono, Sede, Email) -->
+            <ul class="contatti-direct-list" aria-label="Recapiti diretti Pro Detailing">
+              
+              <!-- Telefono (Esatto del Mockup: +39 351 234 5678) -->
+              <li class="contatti-direct-item">
+                <span class="contatti-direct-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </span>
+                <a href="tel:+393512345678" class="contatti-direct-link" aria-label="Chiama il numero telefonico +39 351 234 5678">
+                  +39 351 234 5678
+                </a>
+              </li>
+
+              <!-- Sede Operativa -->
+              <li class="contatti-direct-item">
+                <span class="contatti-direct-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </span>
+                <span class="contatti-direct-text">
+                  Via Roma 123, Milano (MI)
+                </span>
+              </li>
+
+              <!-- Email Ufficiale -->
+              <li class="contatti-direct-item">
+                <span class="contatti-direct-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </span>
+                <a href="mailto:info@prodetailing.it" class="contatti-direct-link" aria-label="Invia una email a info@prodetailing.it">
+                  info@prodetailing.it
+                </a>
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
       </div>
     </section>
 
