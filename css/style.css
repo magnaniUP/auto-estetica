@@ -3119,3 +3119,403 @@ svg {
     font-size: 0.92rem;
   }
 }
+
+/* ==========================================================================
+   18. SEZIONE FOOTER (Etapa 10 - Riproduzione Fedele Mockup)
+   Fondo scuro premium (#07090d), logotipo ufficiale Pro Detailing a sinistra,
+   menu orizzontale al centro, icone social + bottone WhatsApp a destra,
+   divisorio sottile, copyright con anno dinamico e policy legali in calce.
+   ========================================================================== */
+
+.site-footer {
+  position: relative;
+  background-color: var(--color-bg-primary, #07090d);
+  color: var(--color-text-muted, #94a3b8);
+  border-top: 1px solid var(--color-border-subtle, rgba(255, 255, 255, 0.08));
+  overflow: hidden;
+  z-index: 10;
+}
+
+.footer-container {
+  max-width: var(--container-max-width, 1380px);
+  margin: 0 auto;
+  padding: 0 var(--container-padding, 1.5rem);
+}
+
+/* Parte Superiore: Flex a 3 zone (Logo, Nav, Canali Social/WhatsApp) */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.25rem 0;
+  gap: 2rem;
+}
+
+/* 1. Brand Logo */
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+  transition: opacity var(--transition-fast, 0.18s ease);
+}
+
+.footer-brand:hover {
+  opacity: 0.88;
+}
+
+.footer-logo {
+  height: 40px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* 2. Menu di Navigazione Secondario Orizzontale */
+.footer-nav {
+  display: flex;
+  align-items: center;
+}
+
+.footer-nav-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav-link {
+  font-family: var(--font-primary);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #9ca3af;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  padding: 0.35rem 0;
+  position: relative;
+  transition: color var(--transition-fast, 0.18s ease);
+}
+
+.footer-nav-link:hover,
+.footer-nav-link:focus-visible {
+  color: var(--color-brand-primary, #8dea20);
+}
+
+/* 3. Canali Social & Azione WhatsApp */
+.footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  flex-shrink: 0;
+}
+
+.footer-social-group {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.footer-social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: all var(--transition-fast, 0.18s ease);
+}
+
+.footer-social-btn:hover,
+.footer-social-btn:focus-visible {
+  background-color: rgba(141, 234, 32, 0.12);
+  border-color: var(--color-brand-primary, #8dea20);
+  color: var(--color-brand-primary, #8dea20);
+  transform: translateY(-2px);
+}
+
+/* Bottone WhatsApp Circolare Verde (Identico al Mockup) */
+.footer-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-brand-primary, #8dea20);
+  color: #071500;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(141, 234, 32, 0.35);
+  transition: all var(--transition-fast, 0.18s ease);
+  flex-shrink: 0;
+}
+
+.footer-whatsapp-btn:hover,
+.footer-whatsapp-btn:focus-visible {
+  background-color: #a4f53f;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 22px rgba(141, 234, 32, 0.5);
+  color: #071500;
+}
+
+/* Divisorio Orizzontale Sottile */
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-border-subtle, rgba(255, 255, 255, 0.08));
+}
+
+/* Parte Inferiore: Copyright, Dati Legali & Policy */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding: 1.25rem 0 1.75rem 0;
+  font-size: 0.82rem;
+  color: #717f94;
+}
+
+.footer-copyright-text {
+  margin: 0;
+  line-height: 1.5;
+  color: #717f94;
+}
+
+.footer-vat,
+.footer-city {
+  color: #94a3b8;
+}
+
+.footer-pipe {
+  margin: 0 0.55rem;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.footer-legal-right {
+  display: flex;
+  align-items: center;
+}
+
+.footer-policy-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-policy-link {
+  background: none;
+  border: none;
+  padding: 0.2rem 0;
+  font-family: inherit;
+  font-size: 0.82rem;
+  color: #717f94;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color var(--transition-fast, 0.18s ease);
+}
+
+.footer-policy-link:hover,
+.footer-policy-link:focus-visible {
+  color: var(--color-brand-primary, #8dea20);
+  text-decoration: underline;
+}
+
+/* Modali Policy (GDPR e Cookie Compliance) */
+.policy-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.policy-modal-overlay.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.policy-modal-card {
+  background-color: #0c1017;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+  transform: translateY(20px);
+  transition: transform 0.25s ease;
+}
+
+.policy-modal-overlay.is-active .policy-modal-card {
+  transform: translateY(0);
+}
+
+.policy-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.policy-modal-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.policy-modal-close {
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #cbd5e1;
+  cursor: pointer;
+  transition: all var(--transition-fast, 0.18s ease);
+}
+
+.policy-modal-close:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+.policy-modal-body {
+  padding: 1.5rem 1.75rem;
+  overflow-y: auto;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #cbd5e1;
+}
+
+.policy-modal-body h4 {
+  color: #ffffff;
+  margin: 1.15rem 0 0.45rem 0;
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+.policy-modal-body h4:first-of-type {
+  margin-top: 0;
+}
+
+.policy-modal-body p {
+  margin: 0 0 1rem 0;
+}
+
+/* ==========================================================================
+   Responsività Footer per Notebook, Tablet e Mobile
+   ========================================================================== */
+
+/* 1. Notebook Compatto e Tablet Orizzontale (861px - 1080px) */
+@media (max-width: 1080px) {
+  .footer-nav-list {
+    gap: 1.5rem;
+  }
+}
+
+/* 2. Tablet Verticale (601px - 860px) */
+@media (max-width: 860px) {
+  .footer-top {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2rem 0 1.75rem 0;
+    gap: 1.75rem;
+  }
+
+  .footer-nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-nav-list {
+    gap: 1.25rem;
+    justify-content: center;
+  }
+
+  .footer-actions {
+    margin-left: auto;
+  }
+}
+
+/* 3. Mobile e Smartphone (<= 600px) */
+@media (max-width: 600px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2.25rem 0 1.75rem 0;
+    gap: 1.5rem;
+  }
+
+  .footer-logo {
+    height: 38px;
+  }
+
+  .footer-nav {
+    width: 100%;
+  }
+
+  .footer-nav-list {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer-nav-link {
+    display: inline-block;
+    padding: 0.4rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .footer-actions {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.15rem;
+    margin-top: 0.25rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.85rem;
+    padding: 1.25rem 0 2rem 0;
+  }
+
+  .footer-copyright-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .footer-copyright-text .footer-pipe {
+    display: none;
+  }
+}

@@ -16,8 +16,8 @@
    * Se il numero non è ancora disponibile, questo placeholder è predisposto per essere aggiornato qui.
    */
   const WHATSAPP_CONFIG = {
-    // PLACEHOLDER: Sostituire '390000000000' con il numero commerciale ufficiale
-    phoneNumber: '390000000000',
+    // Numero commerciale ufficiale configurato dal mockup
+    phoneNumber: '393512345678',
     defaultMessage: 'Buongiorno Pro Detailing, vorrei richiedere informazioni e un preventivo per la mia auto.'
   };
 
@@ -305,6 +305,71 @@
           panel.classList.add('is-open');
         }
       });
+    });
+
+    /**
+     * 9. GESTIONE FOOTER (Anno Dinamico & Modali Privacy/Cookie)
+     * ------------------------------------------------------------------------
+     */
+    const footerYear = document.getElementById('footer-year');
+    if (footerYear) {
+      footerYear.textContent = new Date().getFullYear();
+    }
+
+    // Gestione Modali Informative Policy
+    const modalTriggers = document.querySelectorAll('[data-modal]');
+    const modalOverlays = document.querySelectorAll('.policy-modal-overlay');
+    const modalCloses = document.querySelectorAll('.policy-modal-close');
+
+    function openModal(modalId) {
+      const targetModal = document.getElementById(modalId);
+      if (!targetModal) return;
+      targetModal.classList.add('is-active');
+      targetModal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('menu-open');
+      const closeBtn = targetModal.querySelector('.policy-modal-close');
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function closeModal(targetModal) {
+      if (!targetModal) return;
+      targetModal.classList.remove('is-active');
+      targetModal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('menu-open');
+    }
+
+    function closeAllModals() {
+      modalOverlays.forEach((m) => closeModal(m));
+    }
+
+    modalTriggers.forEach((trigger) => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        const modalId = trigger.getAttribute('data-modal');
+        openModal(modalId);
+      });
+    });
+
+    modalCloses.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const modal = btn.closest('.policy-modal-overlay');
+        closeModal(modal);
+      });
+    });
+
+    modalOverlays.forEach((overlay) => {
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+          closeModal(overlay);
+        }
+      });
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeAllModals();
+      }
     });
   });
 })();
