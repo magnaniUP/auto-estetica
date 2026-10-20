@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Pro Detailing | Trattamenti Professionali e Lucidatura Auto</title>
+  <meta name="description" content="Pro Detailing: specialisti in car detailing professionale, lucidatura, trattamenti ceramici e protezione della carrozzeria per un'auto sempre come nuova.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Meta Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="Pro Detailing">
+  <meta property="og:title" content="Pro Detailing | Car Detailing Professionale">
+  <meta property="og:description" content="Proteggiamo, valorizziamo e facciamo brillare ogni dettaglio della tua auto con trattamenti professionali.">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Foglio di Stile Principale -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       HEADER / MENU DI NAVIGAZIONE SUPERIORE
+       Riproduzione fedele della sezione superiore del Mockup
+       ======================================================================== -->
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+
+      <!-- 1. Logotipo Pro Detailing (Sinistra) -->
+      <a href="#home" class="header-brand" aria-label="Pro Detailing - Torna all'inizio">
+        <img 
+          src="assets/images/logo.svg" 
+          alt="Pro Detailing - Car Detailing & Trattamento Ceramico" 
+          class="brand-logo-svg"
+          width="175" 
+          height="51"
+          loading="eager"
+        >
+      </a>
+
+      <!-- 2. Navigazione Principale Desktop (Centrale) -->
+      <nav class="header-nav" aria-label="Navigazione principale">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#home" class="nav-link active">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#servizi" class="nav-link">Servizi</a>
+          </li>
+          <li class="nav-item">
+            <a href="#lavori" class="nav-link">Lavori Eseguiti</a>
+          </li>
+          <li class="nav-item">
+            <a href="#chi-siamo" class="nav-link">Chi Siamo</a>
+          </li>
+          <li class="nav-item">
+            <a href="#faq" class="nav-link">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contatti" class="nav-link">Contatti</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 3. Azioni a Destra (Pulsante WhatsApp & Toggle Mobile) -->
+      <div class="header-actions">
+        <!-- Pulsante WhatsApp (Configurabile in js/main.js) -->
+        <a 
+          href="https://wa.me/390000000000" 
+          class="btn-whatsapp" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          aria-label="Contattaci su WhatsApp (apre in una nuova scheda)"
+        >
+          <svg class="icon-whatsapp" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.59 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.44 19.65L5.27 16.61L5.07 16.3C4.24 14.98 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67ZM8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7.02 8.48 7.02 9.68C7.02 10.88 7.9 12.03 8.02 12.19C8.14 12.35 9.73 14.81 12.18 15.86C12.76 16.11 13.22 16.27 13.57 16.38C14.16 16.57 14.7 16.54 15.12 16.48C15.59 16.41 16.57 15.89 16.77 15.31C16.98 14.74 16.98 14.25 16.92 14.14C16.86 14.03 16.7 13.97 16.45 13.85C16.2 13.72 14.98 13.12 14.75 13.04C14.53 12.95 14.36 12.91 14.2 13.16C14.03 13.4 13.57 13.97 13.43 14.14C13.29 14.3 13.15 14.32 12.9 14.2C12.65 14.07 11.61 13.73 10.37 12.63C9.41 11.77 8.76 10.71 8.57 10.39C8.38 10.06 8.55 9.89 8.68 9.76C8.79 9.64 8.93 9.46 9.06 9.31C9.18 9.16 9.22 9.06 9.3 8.9C9.39 8.73 9.34 8.59 9.28 8.47C9.22 8.35 8.72 7.13 8.53 6.64C8.33 6.17 8.14 6.23 8 6.22C7.86 6.22 7.7 6.21 7.53 6.21L8.53 7.33Z"/>
+          </svg>
+          <span class="btn-whatsapp-text">WhatsApp</span>
+        </a>
+
+        <!-- Pulsante Hamburger Mobile (Accessibile) -->
+        <button 
+          type="button" 
+          class="mobile-toggle" 
+          aria-label="Apri menu di navigazione" 
+          aria-expanded="false" 
+          aria-controls="mobile-nav-drawer"
+        >
+          <span class="hamburger-box" aria-hidden="true">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- ======================================================================
+         MENU MOBILE (Drawer & Overlay per Tablet e Smartphone)
+         ====================================================================== -->
+    <div 
+      class="mobile-menu-overlay" 
+      id="mobile-nav-drawer" 
+      role="dialog" 
+      aria-modal="true" 
+      aria-label="Menu di navigazione mobile"
+    >
+      <div class="mobile-drawer">
+        <nav aria-label="Navigazione mobile">
+          <ul class="mobile-nav-list">
+            <li><a href="#home" class="mobile-nav-link active">Home</a></li>
+            <li><a href="#servizi" class="mobile-nav-link">Servizi</a></li>
+            <li><a href="#lavori" class="mobile-nav-link">Lavori Eseguiti</a></li>
+            <li><a href="#chi-siamo" class="mobile-nav-link">Chi Siamo</a></li>
+            <li><a href="#faq" class="mobile-nav-link">FAQ</a></li>
+            <li><a href="#contatti" class="mobile-nav-link">Contatti</a></li>
+          </ul>
+        </nav>
+
+        <div class="mobile-drawer-footer">
+          <a 
+            href="https://wa.me/390000000000" 
+            class="btn-whatsapp mobile-btn-whatsapp" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Scrivici su WhatsApp (apre in una nuova scheda)"
+          >
+            <svg class="icon-whatsapp" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.59 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.44 19.65L5.27 16.61L5.07 16.3C4.24 14.98 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67ZM8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7.02 8.48 7.02 9.68C7.02 10.88 7.9 12.03 8.02 12.19C8.14 12.35 9.73 14.81 12.18 15.86C12.76 16.11 13.22 16.27 13.57 16.38C14.16 16.57 14.7 16.54 15.12 16.48C15.59 16.41 16.57 15.89 16.77 15.31C16.98 14.74 16.98 14.25 16.92 14.14C16.86 14.03 16.7 13.97 16.45 13.85C16.2 13.72 14.98 13.12 14.75 13.04C14.53 12.95 14.36 12.91 14.2 13.16C14.03 13.4 13.57 13.97 13.43 14.14C13.29 14.3 13.15 14.32 12.9 14.2C12.65 14.07 11.61 13.73 10.37 12.63C9.41 11.77 8.76 10.71 8.57 10.39C8.38 10.06 8.55 9.89 8.68 9.76C8.79 9.64 8.93 9.46 9.06 9.31C9.18 9.16 9.22 9.06 9.3 8.9C9.39 8.73 9.34 8.59 9.28 8.47C9.22 8.35 8.72 7.13 8.53 6.64C8.33 6.17 8.14 6.23 8 6.22C7.86 6.22 7.7 6.21 7.53 6.21L8.53 7.33Z"/>
+            </svg>
+            <span>Scrivici su WhatsApp</span>
+            <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       AREA CONTENUTO PRINCIPALE (Placeholder Strutturali per Ancoraggi)
+       Queste sezioni saranno sviluppate nelle prossime tappe.
+       ======================================================================== -->
+  <main id="main-content">
+
+    <!-- ======================================================================
+         SEZIONE HERO (Dobra Principal - Ancora: #home)
+         Riproduzione fedele della prima dobra del Mockup
+         ====================================================================== -->
+    <section class="hero-section" id="home" aria-label="Introduzione Pro Detailing">
+      
+      <!-- Sfondo e Fotografia dell'Automobile nel Detailing Studio -->
+      <div class="hero-media-wrapper" aria-hidden="true">
+        <picture>
+          <source srcset="assets/images/hero-detailing.webp" type="image/webp">
+          <img 
+            src="assets/images/hero-detailing.jpg" 
+            alt="Auto nera lucidata con trattamento ceramico in studio professionale di detailing" 
+            class="hero-media-image"
+            width="1376" 
+            height="768"
+            fetchpriority="high"
+          >
+        </picture>
+        <div class="hero-overlay-gradient"></div>
+        <div class="hero-overlay-bottom"></div>
+      </div>
+
+      <!-- Contenuto Testuale & Azioni Principali -->
+      <div class="container hero-container">
+        <div class="hero-content">
+          
+          <!-- Testo di Introduzione (Eyebrow) -->
+          <div class="hero-eyebrow">
+            <span class="hero-eyebrow-line" aria-hidden="true"></span>
+            <span class="hero-eyebrow-text">LA TUA AUTO, LA <span class="text-lime">NOSTRA PASSIONE</span></span>
+          </div>
+
+          <!-- Headline Principale (Unico H1 della Pagina) -->
+          <h1 class="hero-title">
+            Detailing professionale<br>
+            per un’auto sempre<br>
+            <span class="hero-title-highlight">come nuova</span>
+          </h1>
+
+          <!-- Descrizione Breve -->
+          <p class="hero-description">
+            Proteggiamo, valorizziamo e facciamo brillare ogni dettaglio della tua auto con trattamenti professionali e prodotti di alta qualità.
+          </p>
+
+          <!-- CTA Principale WhatsApp -->
+          <div class="hero-cta-wrapper">
+            <a 
+              href="https://wa.me/390000000000" 
+              class="btn-hero-cta btn-whatsapp" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              aria-label="Richiedi un preventivo su WhatsApp (apre in una nuova scheda)"
+            >
+              <svg class="icon-whatsapp" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.59 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.44 19.65L5.27 16.61L5.07 16.3C4.24 14.98 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67ZM8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7.02 8.48 7.02 9.68C7.02 10.88 7.9 12.03 8.02 12.19C8.14 12.35 9.73 14.81 12.18 15.86C12.76 16.11 13.22 16.27 13.57 16.38C14.16 16.57 14.7 16.54 15.12 16.48C15.59 16.41 16.57 15.89 16.77 15.31C16.98 14.74 16.98 14.25 16.92 14.14C16.86 14.03 16.7 13.97 16.45 13.85C16.2 13.72 14.98 13.12 14.75 13.04C14.53 12.95 14.36 12.91 14.2 13.16C14.03 13.4 13.57 13.97 13.43 14.14C13.29 14.3 13.15 14.32 12.9 14.2C12.65 14.07 11.61 13.73 10.37 12.63C9.41 11.77 8.76 10.71 8.57 10.39C8.38 10.06 8.55 9.89 8.68 9.76C8.79 9.64 8.93 9.46 9.06 9.31C9.18 9.16 9.22 9.06 9.3 8.9C9.39 8.73 9.34 8.59 9.28 8.47C9.22 8.35 8.72 7.13 8.53 6.64C8.33 6.17 8.14 6.23 8 6.22C7.86 6.22 7.7 6.21 7.53 6.21L8.53 7.33Z"/>
+              </svg>
+              <span>Richiedi un preventivo</span>
+              <span class="btn-arrow" aria-hidden="true">&nearr;</span>
+            </a>
+          </div>
+
+          <!-- Tre Differenziali Informativi -->
+          <div class="hero-features" role="list" aria-label="I nostri punti di forza">
+            
+            <div class="hero-feature-item" role="listitem">
+              <div class="feature-icon-wrapper" aria-hidden="true">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 11l2-5h10l2 5"/>
+                  <rect x="3" y="11" width="18" height="8" rx="2"/>
+                  <circle cx="7" cy="15" r="1.5" fill="currentColor"/>
+                  <circle cx="17" cy="15" r="1.5" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="feature-text">
+                <span>Massima cura</span>
+                <span>dei dettagli</span>
+              </div>
+            </div>
+
+            <div class="hero-feature-item" role="listitem">
+              <div class="feature-icon-wrapper" aria-hidden="true">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <path d="M9 12l2 2 4-4"/>
+                </svg>
+              </div>
+              <div class="feature-text">
+                <span>Prodotti premium</span>
+                <span>e sicuri</span>
+              </div>
+            </div>
+
+            <div class="hero-feature-item" role="listitem">
+              <div class="feature-icon-wrapper" aria-hidden="true">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="7"/>
+                  <line x1="12" y1="2" x2="12" y2="5"/>
+                  <line x1="12" y1="19" x2="12" y2="22"/>
+                  <line x1="2" y1="12" x2="5" y2="12"/>
+                  <line x1="19" y1="12" x2="22" y2="12"/>
+                  <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="feature-text">
+                <span>Risultati visibili</span>
+                <span>e duraturi</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SEZIONE SERVIZI (ETAPA 3 - I NOSTRI SERVIZI)
+         Trattamenti professionali di car detailing, layout fedele al mockup
+         ====================================================================== -->
+    <section id="servizi" class="services-section" aria-labelledby="services-heading">
+      <div class="services-container">
+        
+        <!-- Header Sezione: Titolo, Descrizione e Pulsante "Scopri tutti i servizi" -->
+        <div class="services-header">
+          <div class="services-header-content">
+            <div class="services-eyebrow">
+              <span class="services-eyebrow-bar" aria-hidden="true"></span>
+              <span class="services-eyebrow-text">I NOSTRI SERVIZI</span>
+            </div>
+            <h2 id="services-heading" class="services-title">
+              Trattamenti professionali<br>per ogni esigenza
+            </h2>
+            <p class="services-description">
+              Offriamo una gamma completa di servizi di detailing per mantenere la tua auto sempre in perfette condizioni, dentro e fuori.
+            </p>
+          </div>
+          
+          <div class="services-header-action">
+            <a href="#servizi" class="btn-services-outline" aria-label="Scopri tutti i servizi di detailing">
+              <span>Scopri tutti i servizi</span>
+              <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Griglia dei 5 Cartoni di Servizio con Fotografie e Icone Dedicate -->
+        <div class="services-grid" role="list" aria-label="Elenco dei trattamenti di detailing">
+          
+          <!-- Card 1: Lavaggio esterno e interno -->
+          <article class="service-card" role="listitem">
+            <div class="service-card-top">
+              <div class="service-card-icon" aria-hidden="true">
+                <svg class="service-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <!-- Bolle / lavaggio superiore -->
+                  <circle cx="8" cy="4" r="1.5" />
+                  <circle cx="15.5" cy="4.5" r="1.2" />
+                  <circle cx="12" cy="2.5" r="1" />
+                  <!-- Silhouette frontale veicolo -->
+                  <path d="M5 12l2-4h10l2 4" />
+                  <rect x="3" y="12" width="18" height="7" rx="2" />
+                  <circle cx="7" cy="15.5" r="1.2" fill="currentColor" />
+                  <circle cx="17" cy="15.5" r="1.2" fill="currentColor" />
+                  <line x1="10" y1="15.5" x2="14" y2="15.5" />
+                </svg>
+              </div>
+              <h3 class="service-card-title">
+                Lavaggio<br>esterno e interno
+              </h3>
+            </div>
+            
+            <div class="service-card-media">
+              <img 
+                src="assets/images/servizio-lavaggio.webp" 
+                alt="Lavaggio esterno e interno con schiuma attiva professionale in studio di detailing" 
+                class="service-card-img"
+                loading="eager"
+                decoding="async"
+                width="600"
+                height="440"
+              >
+              <div class="service-card-overlay" aria-hidden="true"></div>
+              <div class="service-card-footer">
+                <a href="#servizi" class="service-card-link" aria-label="Scopri di più sul lavaggio esterno e interno">
+                  <span>Scopri di più</span>
+                  <span class="service-link-arrow" aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Lucidatura e correzione vernice -->
+          <article class="service-card" role="listitem">
+            <div class="service-card-top">
+              <div class="service-card-icon" aria-hidden="true">
+                <svg class="service-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <!-- Movimento orbitale/rosetta politriz da car detailing -->
+                  <circle cx="12" cy="8.5" r="4.2" />
+                  <circle cx="8" cy="15.5" r="4.2" />
+                  <circle cx="16" cy="15.5" r="4.2" />
+                  <circle cx="12" cy="13" r="1.5" fill="currentColor" />
+                </svg>
+              </div>
+              <h3 class="service-card-title">
+                Lucidatura<br>e correzione vernice
+              </h3>
+            </div>
+            
+            <div class="service-card-media">
+              <img 
+                src="assets/images/servizio-lucidatura.webp" 
+                alt="Lucidatura professionale e correzione vernice con politriz roto-orbitale su carrozzeria scura" 
+                class="service-card-img"
+                loading="eager"
+                decoding="async"
+                width="600"
+                height="440"
+              >
+              <div class="service-card-overlay" aria-hidden="true"></div>
+              <div class="service-card-footer">
+                <a href="#servizi" class="service-card-link" aria-label="Scopri di più sulla lucidatura e correzione vernice">
+                  <span>Scopri di più</span>
+                  <span class="service-link-arrow" aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Trattamento ceramico -->
+          <article class="service-card" role="listitem">
+            <div class="service-card-top">
+              <div class="service-card-icon" aria-hidden="true">
+                <svg class="service-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <!-- Scudo di protezione nanoceramica -->
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="M12 8l2.5 3.5L12 15l-2.5-3.5z" fill="rgba(141, 234, 32, 0.25)" />
+                </svg>
+              </div>
+              <h3 class="service-card-title">
+                Trattamento ceramico
+              </h3>
+            </div>
+            
+            <div class="service-card-media">
+              <img 
+                src="assets/images/servizio-ceramico.webp" 
+                alt="Trattamento ceramico protettivo nanotecnologico ad altissima lucentezza e idrorepellenza" 
+                class="service-card-img"
+                loading="eager"
+                decoding="async"
+                width="600"
+                height="440"
+              >
+              <div class="service-card-overlay" aria-hidden="true"></div>
+              <div class="service-card-footer">
+                <a href="#servizi" class="service-card-link" aria-label="Scopri di più sul trattamento ceramico">
+                  <span>Scopri di più</span>
+                  <span class="service-link-arrow" aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: Protezione interni -->
+          <article class="service-card" role="listitem">
+            <div class="service-card-top">
+              <div class="service-card-icon" aria-hidden="true">
+                <svg class="service-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <!-- Sedile premium / interni di lusso -->
+                  <path d="M7 19h10" />
+                  <path d="M8.5 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v6h-7V4z" />
+                  <path d="M6 10h12l1 6a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2l1-6z" />
+                  <line x1="9" y1="14" x2="15" y2="14" stroke-dasharray="1 1" />
+                </svg>
+              </div>
+              <h3 class="service-card-title">
+                Protezione interni
+              </h3>
+            </div>
+            
+            <div class="service-card-media">
+              <img 
+                src="assets/images/servizio-interni.webp" 
+                alt="Cura e protezione profonda per interni automobilistici in pelle pregiata e tessuti" 
+                class="service-card-img"
+                loading="eager"
+                decoding="async"
+                width="600"
+                height="440"
+              >
+              <div class="service-card-overlay" aria-hidden="true"></div>
+              <div class="service-card-footer">
+                <a href="#servizi" class="service-card-link" aria-label="Scopri di più sulla protezione degli interni">
+                  <span>Scopri di più</span>
+                  <span class="service-link-arrow" aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5: Rimozione graffi e difetti -->
+          <article class="service-card" role="listitem">
+            <div class="service-card-top">
+              <div class="service-card-icon" aria-hidden="true">
+                <svg class="service-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <!-- Linee di correzione graffi e bagliore specchiato -->
+                  <line x1="4" y1="14" x2="10" y2="8" />
+                  <line x1="8" y1="18" x2="14" y2="12" />
+                  <path d="M17 5l1.5 3 3 1.5-3 1.5-1.5 3-1.5-3-3-1.5 3-1.5z" fill="rgba(141, 234, 32, 0.25)" />
+                </svg>
+              </div>
+              <h3 class="service-card-title">
+                Rimozione graffi<br>e difetti
+              </h3>
+            </div>
+            
+            <div class="service-card-media">
+              <img 
+                src="assets/images/servizio-rimozione-graffi.webp" 
+                alt="Eliminazione graffi, swirl e imperfezioni su carrozzeria scura con finitura a specchio" 
+                class="service-card-img"
+                loading="eager"
+                decoding="async"
+                width="600"
+                height="440"
+              >
+              <div class="service-card-overlay" aria-hidden="true"></div>
+              <div class="service-card-footer">
+                <a href="#servizi" class="service-card-link" aria-label="Scopri di più sulla rimozione di graffi e difetti">
+                  <span>Scopri di più</span>
+                  <span class="service-link-arrow" aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Controlli Slider Mobile (Indicatori & Frecce per Touch / Swipe) -->
+        <div class="services-slider-controls" aria-label="Navigazione slider servizi">
+          <button type="button" class="slider-btn slider-prev" aria-label="Servizio precedente" disabled>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </button>
+          
+          <div class="slider-dots" role="tablist" aria-label="Seleziona servizio">
+            <button type="button" class="slider-dot is-active" role="tab" aria-selected="true" aria-label="Servizio 1 di 5: Lavaggio esterno e interno" data-index="0"></button>
+            <button type="button" class="slider-dot" role="tab" aria-selected="false" aria-label="Servizio 2 di 5: Lucidatura e correzione vernice" data-index="1"></button>
+            <button type="button" class="slider-dot" role="tab" aria-selected="false" aria-label="Servizio 3 di 5: Trattamento ceramico" data-index="2"></button>
+            <button type="button" class="slider-dot" role="tab" aria-selected="false" aria-label="Servizio 4 di 5: Protezione interni" data-index="3"></button>
+            <button type="button" class="slider-dot" role="tab" aria-selected="false" aria-label="Servizio 5 di 5: Rimozione graffi e difetti" data-index="4"></button>
+          </div>
+
+          <button type="button" class="slider-btn slider-next" aria-label="Servizio successivo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SEZIONE LAVORI ESEGUITI (ETAPA 4 - IL NOSTRO LAVORO, LA TUA SODDISFAZIONE)
+         Galleria fotografica premium a 10 immagini con proporzioni uniformi
+         ====================================================================== -->
+    <section id="lavori" class="lavori-section" aria-labelledby="lavori-heading">
+      <div class="lavori-container">
+        
+        <!-- Header Sezione: Eyebrow, Titolo H2, Descrizione e Pulsante -->
+        <div class="lavori-header">
+          <div class="lavori-header-content">
+            <div class="lavori-eyebrow">
+              <span class="lavori-eyebrow-bar" aria-hidden="true"></span>
+              <span class="lavori-eyebrow-text">LAVORI ESEGUITI</span>
+            </div>
+            <h2 id="lavori-heading" class="lavori-title">
+              Il nostro lavoro,<br>la tua soddisfazione
+            </h2>
+            <p class="lavori-description">
+              Scopri alcuni dei nostri interventi di detailing su auto di ogni marca e modello. Ogni veicolo è una nuova sfida.
+            </p>
+          </div>
+
+          <div class="lavori-header-action">
+            <a href="#lavori" class="btn-lavori-outline" aria-label="Visualizza tutti gli interventi eseguiti">
+              <span>Vedi tutti i lavori</span>
+              <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Griglia Galleria 10 Immagini (5 Colonne x 2 Righe su Desktop) -->
+        <div class="lavori-grid" role="list" aria-label="Galleria fotografica degli interventi di detailing">
+          
+          <!-- Immagine 1: Faro auto con riflessi -->
+          <div class="lavori-item" role="listitem">
+            <img 
+              src="assets/images/lavori-faro-auto.webp" 
+              alt="Dettaglio faro anteriore a LED e riflessi lucidi su automobile nera" 
+              class="lavori-img"
+              loading="eager"
+              decoding="async"
+              width="1160"
+              height="800"
+            >
+          </div>
+
+          <!-- Immagine 2: Cerchio e freno a disco rosso -->
+          <div class="lavori-item" role="listitem">
+            <img 
+              src="assets/images/lavori-cerchio-freno.webp" 
+              alt="Cerchio sportivo nero e pinza freno rossa ad alte prestazioni" 
+              class="lavori-img"
+              loading="eager"
+              decoding="async"
+              width="1160"
+              height="800"
+            >
+          </div>
+
+          <!-- Immagine 3: Carrozzeria e riflessi studio -->
+          <div class="lavori-item" role="listitem">
+            <img 
+              src="assets/images/lavori-carrozzeria-riflessi.webp" 
+              alt="Riflessi lineari di luce su carrozzeria scura con trattamento ceramico" 
+              class="lavori-img"
+              loading="eager"
+              decoding="async"
+              width="1160"
+              height="800"
+            >
+          </div>
+
+          <!-- Immagine 4: Interni volante e plancia -->
+          <div class="lavori-item" role="listitem">
+            <img 
+              src="assets/images/lavori-interni-volante.webp" 
+              alt="Interni auto di lusso con volante sportivo in pelle e cruscotto dettagliato" 
+              class="lavori-img"
+              loading="eager"
+              decoding="async"
+              width="1160"
+              height="800"
+            >
+          </div>
+
+          <!-- Immagine 5: Auto sportiva blu -->
+          <div class="lavori-item" role="listitem">
+            <img 
+              src="assets/images/lavori-auto-blu.webp" 
+              alt="Fiancata e dettagli lucidi di automobile sportiva blu metallizzato" 
+              class="lavori-img"
+              loading="eager"
+              decoding="async"
+              width="1160"
+              height="800"
+            >
+          </div>
+
+          <!-- Immagine 6: Auto sportiva rossa -->
+          <div class="lavori-item" role="listitem">
+            <img 
+              src="assets/images/lavori-auto-rossa.webp" 
+              alt="Frontale e linea aggressiva di supercar rossa fiammante lucidata a specchio" 
+              class="lavori-img"
+              loading="eager"
+              decoding="async"
+              width="1160"
+              height="800"
+            >
+          </div>
+
+          <!-- Immagine 7: Sedili in pelle pregiata -->
+          <div class="lavori-item" role="listitem">
+            <img 
+              src="assets/images/lavori-sedili-pelle.webp" 
+              alt="Sedili sportivi in pelle nera con cuciture a contrasto rosse rifinite" 
+              class="lavori-img"
+              loading="eager"
+              decoding="async"
+              width="1160"
+              height="800"
+            >
+          </div>
+
+          <!-- Immagine 8: Lucidatura e riflessi perfetti -->
+          <div class="lavori-item" role="listitem">
+            <img 
+              src="assets/images/lavori-lucidatura.webp" 
+              alt="Finitura perfetta e riflessi specchiati su vernice scura corretta da imperfezioni" 
+              class="lavori-img"
+              loading="eager"
+              decoding="async"
+              width="1160"
+              height="800"
+            >
+          </div>
+
+          <!-- Immagine 9: Fanali posteriori a LED -->
+          <div class="lavori-item" role="listitem">
+            <img 
+              src="assets/images/lavori-fanali-posteriori.webp" 
+              alt="Fanali posteriori a LED illuminati e finitura posteriore premium" 
+              class="lavori-img"
+              loading="eager"
+              decoding="async"
+              width="1160"
+              height="800"
+            >
+          </div>
+
+          <!-- Immagine 10: Auto sportiva gialla -->
+          <div class="lavori-item" role="listitem">
+            <img 
+              src="assets/images/lavori-auto-gialla.webp" 
+              alt="Dettaglio fiancata e passaruota di automobile sportiva gialla brillante" 
+              class="lavori-img"
+              loading="eager"
+              decoding="async"
+              width="1160"
+              height="800"
+            >
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Sezione Chi Siamo (Ancora: #chi-siamo) -->
+    <section id="chi-siamo" class="section-anchor-placeholder" aria-label="Sezione Chi Siamo">
+      <div class="placeholder-inner">
+        <span class="placeholder-tag">Predisposizione Ancora</span>
+        <h2 class="placeholder-title">Chi Siamo</h2>
+        <p class="placeholder-desc">Destinazione pronta per la presentazione della passione, esperienza e certificazioni.</p>
+      </div>
+    </section>
+
+    <!-- Sezione FAQ (Ancora: #faq) -->
+    <section id="faq" class="section-anchor-placeholder" aria-label="Sezione FAQ">
+      <div class="placeholder-inner">
+        <span class="placeholder-tag">Predisposizione Ancora</span>
+        <h2 class="placeholder-title">Domande Frequenti (FAQ)</h2>
+        <p class="placeholder-desc">Destinazione pronta per i quesiti più comuni su durata, lavaggio e prenotazioni.</p>
+      </div>
+    </section>
+
+    <!-- Sezione Contatti (Ancora: #contatti) -->
+    <section id="contatti" class="section-anchor-placeholder" aria-label="Sezione Contatti">
+      <div class="placeholder-inner">
+        <span class="placeholder-tag">Predisposizione Ancora</span>
+        <h2 class="placeholder-title">Contatti & Preventivi</h2>
+        <p class="placeholder-desc">Destinazione pronta per il form contatti, recapiti diretti e mappa di sede.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Script Funzionale Header -->
+  <script src="js/main.js"></script>
+</body>
+</html>
+

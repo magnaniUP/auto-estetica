@@ -1,0 +1,1724 @@
+/* ==========================================================================
+   PRO DETAILING - Stile Ufficiale Header & Layout Base
+   Progettato per riproduzione fedele mockup, performance e accessibilità
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VARIABILI DI PROGETTO (Custom Properties)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Tavolozza Colori Brand (Estratta dal Mockup Originale) */
+  --color-bg-primary: #07090d;          /* Fondo quasi nero con nuance bluastra */
+  --color-bg-header: rgba(7, 9, 13, 0.94); /* Header con trasparenza elegante */
+  --color-bg-header-solid: #07090d;
+  --color-bg-card: #0d1117;
+  --color-bg-mobile-menu: rgba(7, 9, 13, 0.98);
+
+  --color-brand-primary: #8dea20;       /* Verde-limone brillante iconico */
+  --color-brand-hover: #7dce1a;         /* Tonalità hover attiva */
+  --color-brand-glow: rgba(141, 234, 32, 0.35); /* Bagliore tecnico soft */
+  --color-brand-dark: #071500;          /* Testo scuro ad alto contrasto su verde */
+
+  --color-border-subtle: rgba(255, 255, 255, 0.08); /* Divisorio inferiore discreto */
+  --color-border-hover: rgba(141, 234, 32, 0.4);
+
+  /* Sezione Servizi (Chiara) & Card System */
+  --color-bg-services: #f7f7f7;         /* Sfondo chiaro elegante della sezione servizi */
+  --color-text-heading-dark: #090d14;   /* Titolo principale scuro ad alto impatto */
+  --color-text-desc-dark: #4b5563;      /* Descrizione leggibile e sobria */
+  --color-card-bg: #0b0f16;             /* Sfondo scuro delle card servizi */
+  --color-card-border: rgba(255, 255, 255, 0.08); /* Bordo discreto delle card */
+  --color-card-border-hover: rgba(141, 234, 32, 0.45);
+
+  --color-text-white: #ffffff;          /* Bianco puro ad alta leggibilità */
+  --color-text-silver: #e2e8f0;         /* Argento chiaro */
+  --color-text-muted: #94a3b8;          /* Grigio ardesia neutro */
+  --color-text-dim: #64748b;
+
+  /* Tipografia */
+  --font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Dimensioni e Spaziature */
+  --header-height: 74px;
+  --header-height-mobile: 66px;
+  --container-max-width: 1380px;
+  --container-padding: 1.5rem;
+
+  /* Transizioni */
+  --transition-fast: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* Ombre & Profondità */
+  --shadow-header: 0 4px 24px rgba(0, 0, 0, 0.55);
+  --shadow-btn: 0 2px 10px rgba(141, 234, 32, 0.25);
+  --shadow-btn-hover: 0 4px 18px rgba(141, 234, 32, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET & BASE
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text-silver);
+  background-color: var(--color-bg-primary);
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-silver);
+  overflow-x: hidden;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Indicatore di Foco Accessibile */
+:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   3. LAYOUT CONTAINER
+   -------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* --------------------------------------------------------------------------
+   4. HEADER PRINCIPALE (Fisso, Elegante, Sfumatura e Bordo Sottile)
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--color-bg-header);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--color-border-subtle);
+  z-index: 1000;
+  transition: background-color var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.site-header.scrolled {
+  background-color: var(--color-bg-header-solid);
+  box-shadow: var(--shadow-header);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  gap: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. LOGOTIPO PRO DETAILING
+   -------------------------------------------------------------------------- */
+.header-brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.header-brand:hover {
+  transform: translateY(-0.5px);
+  opacity: 0.96;
+}
+
+.brand-logo-svg {
+  width: 175px;
+  height: auto;
+  max-height: 48px;
+  object-fit: contain;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   6. NAVEGAZIONE DESKTOP (Centralizzata & Sofisticata)
+   -------------------------------------------------------------------------- */
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 2.25rem; /* Spaziatura orizzontale bilanciata come da mockup */
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.25rem;
+  font-family: var(--font-primary);
+  font-size: 0.84rem; /* 13.5px compatto ed elegante */
+  font-weight: 500;
+  letter-spacing: 0.015em;
+  color: var(--color-text-white);
+  transition: color var(--transition-fast), opacity var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--color-brand-primary);
+}
+
+/* Stato Attivo (Home nel Mockup) */
+.nav-link.active {
+  color: var(--color-brand-primary);
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 2px;
+  background-color: var(--color-brand-primary);
+  border-radius: 9999px;
+  box-shadow: 0 0 8px var(--color-brand-glow);
+}
+
+/* --------------------------------------------------------------------------
+   7. BOTTONE WHATSAPP (Azione Principale Destra)
+   -------------------------------------------------------------------------- */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 8px 18px;
+  background-color: var(--color-brand-primary);
+  color: var(--color-brand-dark);
+  font-family: var(--font-primary);
+  font-size: 0.8125rem; /* 13px */
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  border-radius: 9999px; /* Pill shape */
+  text-decoration: none;
+  box-shadow: var(--shadow-btn);
+  transition: transform var(--transition-smooth), background-color var(--transition-smooth), box-shadow var(--transition-smooth);
+  white-space: nowrap;
+}
+
+.btn-whatsapp:hover {
+  background-color: var(--color-brand-hover);
+  transform: translateY(-1.5px);
+  box-shadow: var(--shadow-btn-hover);
+}
+
+.btn-whatsapp:active {
+  transform: translateY(0);
+}
+
+.btn-whatsapp .icon-whatsapp {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   8. PULSANTE MENU HAMBURGER (Mobile / Tablet)
+   -------------------------------------------------------------------------- */
+.mobile-toggle {
+  display: none; /* Nascosto su schermi ampi */
+  position: relative;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--color-text-white);
+  border: 1px solid transparent;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+  z-index: 1100;
+}
+
+.mobile-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--color-border-subtle);
+}
+
+.hamburger-box {
+  position: relative;
+  width: 20px;
+  height: 14px;
+}
+
+.hamburger-line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-text-white);
+  border-radius: 2px;
+  transition: transform var(--transition-smooth), opacity var(--transition-smooth), background-color var(--transition-smooth);
+}
+
+.hamburger-line:nth-child(1) {
+  top: 0;
+}
+
+.hamburger-line:nth-child(2) {
+  top: 6px;
+}
+
+.hamburger-line:nth-child(3) {
+  top: 12px;
+}
+
+/* Animazione Hamburger a 'X' quando aperto */
+.mobile-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+  background-color: var(--color-brand-primary);
+}
+
+.mobile-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.mobile-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+  background-color: var(--color-brand-primary);
+}
+
+/* --------------------------------------------------------------------------
+   9. MENU MOBILE OVERLAY (Drawer a Scomparsa)
+   -------------------------------------------------------------------------- */
+.mobile-menu-overlay {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .site-header {
+    height: var(--header-height-mobile);
+  }
+
+  .brand-logo-svg {
+    width: 145px;
+    height: auto;
+    max-height: 40px;
+  }
+
+  /* Nascondi la lista desktop */
+  .header-nav {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: inline-flex;
+  }
+
+  /* Versione Compatta del Bottone WhatsApp su Schermi Piccoli */
+  .btn-whatsapp-text {
+    display: inline;
+  }
+
+  /* Overlay Scuro con Sfondo Blur sotto l'header */
+  .mobile-menu-overlay {
+    display: block;
+    position: fixed;
+    top: var(--header-height-mobile);
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - var(--header-height-mobile));
+    background-color: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 1050;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-smooth), visibility var(--transition-smooth);
+    overflow: hidden;
+  }
+
+  .mobile-menu-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Pannello Menu a Discesa (Dall'alto verso il basso) */
+  .mobile-drawer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-height: calc(100vh - var(--header-height-mobile) - 1.5rem);
+    background-color: var(--color-bg-mobile-menu);
+    border-bottom: 1px solid var(--color-border-subtle);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 1px rgba(255, 255, 255, 0.08);
+    padding: 1.25rem 1.25rem 1.75rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    transform: translateY(-100%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1060;
+    overflow-y: auto;
+  }
+
+  .mobile-menu-overlay.is-open .mobile-drawer {
+    transform: translateY(0);
+  }
+
+  .mobile-nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .mobile-nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1.15rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--color-text-white);
+    border-radius: 12px;
+    transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+  }
+
+  .mobile-nav-link:hover,
+  .mobile-nav-link:focus-visible {
+    background-color: rgba(255, 255, 255, 0.04);
+    color: var(--color-brand-primary);
+  }
+
+  /* Item Attivo con Card Morbida e Indicatore a Punto a Destra */
+  .mobile-nav-link.active {
+    color: var(--color-brand-primary);
+    background-color: rgba(141, 234, 32, 0.12);
+    font-weight: 600;
+  }
+
+  .mobile-nav-link.active::after {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-brand-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--color-brand-glow);
+  }
+
+  .mobile-drawer-footer {
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border-subtle);
+  }
+
+  .mobile-btn-whatsapp {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 16px rgba(141, 234, 32, 0.3);
+  }
+
+  .mobile-btn-whatsapp .btn-arrow {
+    font-size: 1.1rem;
+    transition: transform var(--transition-fast);
+  }
+
+  .mobile-btn-whatsapp:hover .btn-arrow {
+    transform: translateX(3px);
+  }
+}
+
+/* Smartphone Stretti (< 480px) */
+@media (max-width: 480px) {
+  .btn-whatsapp-text {
+    display: none; /* Mostra solo icona nell'header per non ingombrare */
+  }
+
+  .btn-whatsapp {
+    padding: 8px 10px;
+    border-radius: 50%;
+  }
+
+  .brand-logo-svg {
+    width: 125px;
+    height: auto;
+    max-height: 34px;
+  }
+
+  .mobile-drawer {
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    padding: 1rem 1rem 1.5rem 1rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   10. HERO SECTION (Dobra Principal com Fotografia e Iluminação de Estúdio)
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: center;
+  background-color: var(--color-bg-primary);
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+/* Camada da Fotografia (Carro Premium no Estúdio) */
+.hero-media-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 60%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-media-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  display: block;
+}
+
+/* Gradiente de Transição Suave e Legibilidade */
+.hero-overlay-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    #07090d 0%,
+    rgba(7, 9, 13, 0.96) 18%,
+    rgba(7, 9, 13, 0.72) 42%,
+    rgba(7, 9, 13, 0.25) 70%,
+    rgba(7, 9, 13, 0) 100%
+  );
+}
+
+.hero-overlay-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 90px;
+  background: linear-gradient(to top, #07090d 0%, rgba(7, 9, 13, 0) 100%);
+}
+
+/* Conteúdo Textual e Elementos de Ação */
+.hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: 3.5rem;
+  padding-bottom: 4rem;
+}
+
+.hero-content {
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Eyebrow / Intro Tag */
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1.25rem;
+}
+
+.hero-eyebrow-line {
+  display: inline-block;
+  width: 26px;
+  height: 2px;
+  background-color: var(--color-brand-primary);
+  border-radius: 2px;
+}
+
+.hero-eyebrow-text {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-silver);
+}
+
+.text-lime {
+  color: var(--color-brand-primary);
+}
+
+/* Título Principal (H1) */
+.hero-title {
+  font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.14;
+  letter-spacing: -0.025em;
+  color: var(--color-text-white);
+  margin-bottom: 1.25rem;
+}
+
+.hero-title-highlight {
+  color: var(--color-brand-primary);
+}
+
+/* Descrição / Parágrafo */
+.hero-description {
+  font-size: 1.025rem;
+  line-height: 1.62;
+  color: var(--color-text-muted);
+  max-width: 490px;
+  margin-bottom: 2.25rem;
+}
+
+/* CTA Principal */
+.hero-cta-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 26px;
+  background-color: var(--color-brand-primary);
+  color: var(--color-brand-dark);
+  font-family: var(--font-primary);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  border-radius: 9999px;
+  text-decoration: none;
+  box-shadow: var(--shadow-btn);
+  transition: transform var(--transition-smooth), background-color var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.btn-hero-cta:hover {
+  background-color: var(--color-brand-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-btn-hover);
+}
+
+.btn-hero-cta:active {
+  transform: translateY(0);
+}
+
+.btn-hero-cta .icon-whatsapp {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.btn-hero-cta .btn-arrow {
+  font-size: 1.15rem;
+  line-height: 1;
+  transition: transform var(--transition-fast);
+}
+
+.btn-hero-cta:hover .btn-arrow {
+  transform: translate(2px, -2px);
+}
+
+/* Três Diferenciais Compactos (Fiel ao Mockup Original) */
+.hero-features {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 620px;
+}
+
+.hero-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.feature-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-brand-primary);
+}
+
+.feature-icon {
+  width: 25px;
+  height: 25px;
+  stroke: var(--color-brand-primary);
+  display: block;
+}
+
+.feature-text {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-text-white);
+  display: flex;
+  flex-direction: column;
+  white-space: normal;
+}
+
+/* Responsividade da Hero Section */
+@media (max-width: 1200px) {
+  .hero-media-wrapper {
+    width: 62%;
+  }
+
+  .hero-features {
+    gap: 1.25rem;
+    max-width: 600px;
+    margin-top: 1.75rem;
+  }
+
+  .feature-icon {
+    width: 23px;
+    height: 23px;
+  }
+
+  .feature-text {
+    font-size: 0.78125rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .hero-section {
+    min-height: auto;
+    padding-top: 1.5rem;
+  }
+
+  .hero-media-wrapper {
+    width: 100%;
+    opacity: 0.82; /* Imagem do carro e iluminação de estúdio bem visíveis e nítidas */
+  }
+
+  .hero-overlay-gradient {
+    background: linear-gradient(
+      to right,
+      rgba(7, 9, 13, 0.86) 0%,
+      rgba(7, 9, 13, 0.65) 48%,
+      rgba(7, 9, 13, 0.28) 85%,
+      rgba(7, 9, 13, 0.15) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(7, 9, 13, 0.45) 0%,
+      rgba(7, 9, 13, 0.35) 50%,
+      rgba(7, 9, 13, 0.88) 100%
+    );
+  }
+
+  .hero-title {
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.85);
+  }
+
+  .hero-description {
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.85);
+    color: var(--color-text-silver);
+  }
+
+  .hero-feature-item {
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
+  }
+
+  .hero-container {
+    padding-top: 2.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  /* Em tablets: 3 colunas perfeitamente alinhadas, sem itens órfãos */
+  .hero-features {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+    max-width: 580px;
+    margin-top: 2rem;
+  }
+
+  .hero-feature-item {
+    gap: 8px;
+  }
+
+  .feature-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .feature-text {
+    font-size: 0.78125rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero-features {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    max-width: 100%;
+    margin-top: 1.75rem;
+  }
+
+  .feature-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .feature-text {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-container {
+    padding-top: 1.75rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 1rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .btn-hero-cta {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+  }
+
+  .hero-features {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+
+  .hero-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .feature-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  .feature-text {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-text-white);
+  }
+}
+
+@media (max-width: 340px) {
+  .hero-features {
+    gap: 0.35rem;
+  }
+
+  .hero-feature-item {
+    gap: 4px;
+  }
+
+  .feature-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .feature-text {
+    font-size: 0.625rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   11. SEZIONE SERVIZI (Trattamenti professionali di detailing - Etapa 3)
+   Sezione chiara premium con contrasto elevato e 5 cartoni scuri dedicati
+   -------------------------------------------------------------------------- */
+.services-section {
+  position: relative;
+  background-color: var(--color-bg-services);
+  padding: 5rem 0 5.5rem 0;
+  color: var(--color-text-heading-dark);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.services-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* Header Sezione */
+.services-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3.25rem;
+  gap: 2rem;
+}
+
+.services-header-content {
+  max-width: 640px;
+}
+
+.services-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.875rem;
+}
+
+.services-eyebrow-bar {
+  display: inline-block;
+  width: 24px;
+  height: 3px;
+  background-color: var(--color-brand-primary);
+  border-radius: 2px;
+}
+
+.services-eyebrow-text {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.services-title {
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--color-text-heading-dark);
+  margin-bottom: 0.875rem;
+}
+
+.services-description {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-text-desc-dark);
+}
+
+.services-header-action {
+  flex-shrink: 0;
+  padding-bottom: 0.25rem;
+}
+
+/* Bottone Superiore con Bordo Verde-Limone */
+.btn-services-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.75rem 1.625rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text-heading-dark);
+  background-color: transparent;
+  border: 1.5px solid var(--color-brand-primary);
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all var(--transition-smooth);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-services-outline .btn-arrow {
+  color: var(--color-brand-primary);
+  font-size: 1.15rem;
+  line-height: 1;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.btn-services-outline:hover,
+.btn-services-outline:focus-visible {
+  background-color: var(--color-brand-primary);
+  color: var(--color-brand-dark);
+  box-shadow: 0 4px 16px rgba(141, 234, 32, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn-services-outline:hover .btn-arrow,
+.btn-services-outline:focus-visible .btn-arrow {
+  color: var(--color-brand-dark);
+  transform: translateX(4px);
+}
+
+.btn-services-outline:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   GRIGLIA DEI 5 CARTONI DEI SERVIZI
+   -------------------------------------------------------------------------- */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+/* Card Singola */
+.service-card {
+  position: relative;
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+  height: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-card-border-hover);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.25), 0 0 20px rgba(141, 234, 32, 0.15);
+}
+
+/* Parte Superiore della Card: Icona + Titolo */
+.service-card-top {
+  padding: 1.5rem 1.25rem 1.125rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  flex-shrink: 0;
+}
+
+.service-card-icon {
+  width: 36px;
+  height: 36px;
+  color: var(--color-brand-primary);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.service-icon-svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--color-brand-primary);
+}
+
+.service-card-title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-text-white);
+  margin: 0;
+  letter-spacing: -0.01em;
+  min-height: 2.6em; /* Mantiene allineati i titoli a 1 o 2 righe */
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Parte Inferiore della Card: Media Fotografico */
+.service-card-media {
+  position: relative;
+  width: 100%;
+  height: 185px;
+  overflow: hidden;
+  margin-top: auto;
+}
+
+.service-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card:hover .service-card-img {
+  transform: scale(1.05);
+}
+
+/* Gradiente Scuro per Leggibilità del Link "Scopri di più" */
+.service-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(11, 15, 22, 0.95) 0%,
+    rgba(11, 15, 22, 0.5) 45%,
+    rgba(11, 15, 22, 0.08) 85%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.service-card-footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.875rem 1.25rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+
+.service-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-white);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.service-card-link .service-link-arrow {
+  color: var(--color-brand-primary);
+  font-size: 0.9375rem;
+  transition: transform var(--transition-fast);
+}
+
+.service-card-link:hover,
+.service-card:hover .service-card-link {
+  color: var(--color-text-white);
+}
+
+.service-card-link:hover .service-link-arrow,
+.service-card:hover .service-card-link .service-link-arrow {
+  transform: translateX(4px);
+}
+
+.service-card-link:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Controlli Slider Mobile (Nascosti di default su Desktop) */
+.services-slider-controls {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVITÀ SEZIONE SERVIZI
+   -------------------------------------------------------------------------- */
+
+/* Desktop compatto / schermi medi (1025px - 1200px) */
+@media (max-width: 1200px) {
+  .services-grid {
+    gap: 0.875rem;
+  }
+
+  .service-card-top {
+    padding: 1.25rem 1rem 1rem 1rem;
+  }
+
+  .service-card-title {
+    font-size: 0.975rem;
+  }
+
+  .service-card-media {
+    height: 170px;
+  }
+}
+
+/* Tablet (769px - 1024px): 3 cartoni prima riga, 2 cartoni centrati seconda riga */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .services-section {
+    padding: 4.5rem 0 5rem 0;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.25rem;
+  }
+
+  .service-card:nth-child(1),
+  .service-card:nth-child(2),
+  .service-card:nth-child(3) {
+    grid-column: span 2;
+  }
+
+  .service-card:nth-child(4) {
+    grid-column: 2 / span 2;
+  }
+
+  .service-card:nth-child(5) {
+    grid-column: 4 / span 2;
+  }
+
+  .service-card-media {
+    height: 185px;
+  }
+}
+
+/* Tablet portrait & Smartphone (<= 768px): Slider orizzontale touch-friendly */
+@media (max-width: 768px) {
+  .services-section {
+    padding: 3.5rem 0 4rem 0;
+  }
+
+  .services-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn-services-outline {
+    align-self: flex-start;
+  }
+
+  /* Slider orizzontale dei cartoni */
+  .services-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 1.125rem;
+    padding: 0.5rem var(--container-padding) 1rem var(--container-padding);
+    margin-left: calc(-1 * var(--container-padding));
+    margin-right: calc(-1 * var(--container-padding));
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .services-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .service-card {
+    flex: 0 0 82%;
+    max-width: 330px;
+    min-width: 260px;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  }
+
+  .service-card:nth-child(5) {
+    grid-column: auto;
+    max-width: 330px;
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .service-card-media {
+    height: 180px;
+  }
+
+  /* Controlli di Navigazione Slider Mobile */
+  .services-slider-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.125rem;
+    margin-top: 1.25rem;
+  }
+
+  .slider-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 1.5px solid rgba(0, 0, 0, 0.12);
+    color: var(--color-text-heading-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all var(--transition-fast);
+  }
+
+  .slider-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+  }
+
+  .slider-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  .slider-btn:not(:disabled):hover,
+  .slider-btn:not(:disabled):focus-visible {
+    background-color: var(--color-brand-primary);
+    border-color: var(--color-brand-primary);
+    color: var(--color-brand-dark);
+    transform: scale(1.05);
+  }
+
+  .slider-dots {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .slider-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    background-color: rgba(0, 0, 0, 0.22);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: width var(--transition-fast), background-color var(--transition-fast);
+  }
+
+  .slider-dot.is-active {
+    width: 26px;
+    background-color: var(--color-brand-primary);
+  }
+}
+
+/* Smartphone compatti (<= 480px) */
+@media (max-width: 480px) {
+  .btn-services-outline {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .service-card {
+    flex: 0 0 85%;
+    min-width: 250px;
+  }
+}
+
+/* Smartphone molto compatti (<= 360px) */
+@media (max-width: 360px) {
+  .services-section {
+    padding: 2.75rem 0 3.25rem 0;
+  }
+
+  .services-title {
+    font-size: 1.625rem;
+  }
+
+  .services-description {
+    font-size: 0.9375rem;
+  }
+
+  .service-card {
+    flex: 0 0 88%;
+    min-width: 235px;
+  }
+
+  .service-card-top {
+    padding: 1.125rem 0.875rem 0.875rem 0.875rem;
+  }
+
+  .service-card-title {
+    font-size: 0.9375rem;
+  }
+
+  .service-card-media {
+    height: 160px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   12. SEZIONE LAVORI ESEGUITI (Galleria Fotografica - Etapa 4)
+   Fondo scuro profondo (#07090d), griglia 5x2 a 10 immagini con proporzioni uniformi
+   -------------------------------------------------------------------------- */
+.lavori-section {
+  position: relative;
+  background-color: var(--color-bg-primary);
+  padding: 5rem 0 5.5rem 0;
+  color: var(--color-text-white);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.lavori-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* Header Sezione Lavori */
+.lavori-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3rem;
+  gap: 2rem;
+}
+
+.lavori-header-content {
+  max-width: 640px;
+}
+
+.lavori-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.875rem;
+}
+
+.lavori-eyebrow-bar {
+  display: inline-block;
+  width: 24px;
+  height: 3px;
+  background-color: var(--color-brand-primary);
+  border-radius: 2px;
+}
+
+.lavori-eyebrow-text {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.lavori-title {
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--color-text-white);
+  margin-bottom: 0.875rem;
+}
+
+.lavori-description {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.lavori-header-action {
+  flex-shrink: 0;
+  padding-bottom: 0.25rem;
+}
+
+/* Bottone "Vedi tutti i lavori" */
+.btn-lavori-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.75rem 1.625rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text-white);
+  background-color: transparent;
+  border: 1.5px solid var(--color-brand-primary);
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all var(--transition-smooth);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-lavori-outline .btn-arrow {
+  color: var(--color-brand-primary);
+  font-size: 1.15rem;
+  line-height: 1;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.btn-lavori-outline:hover,
+.btn-lavori-outline:focus-visible {
+  background-color: var(--color-brand-primary);
+  color: var(--color-brand-dark);
+  box-shadow: 0 4px 16px rgba(141, 234, 32, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn-lavori-outline:hover .btn-arrow,
+.btn-lavori-outline:focus-visible .btn-arrow {
+  color: var(--color-brand-dark);
+  transform: translateX(4px);
+}
+
+.btn-lavori-outline:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   GRIGLIA DELLA GALLERIA DEI LAVORI (10 FOTOGRAFIE)
+   -------------------------------------------------------------------------- */
+.lavori-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.875rem;
+}
+
+.lavori-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #0b0f16;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  aspect-ratio: 1.45 / 1;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.lavori-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lavori-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(141, 234, 32, 0.45);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45), 0 0 16px rgba(141, 234, 32, 0.15);
+  z-index: 2;
+}
+
+.lavori-item:hover .lavori-img {
+  transform: scale(1.06);
+}
+
+/* Responsività Sezione Lavori */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .lavori-section {
+    padding: 4.5rem 0 5rem 0;
+  }
+
+  .lavori-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.875rem;
+  }
+
+  .lavori-item:nth-child(10) {
+    grid-column: 2 / span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .lavori-section {
+    padding: 3.5rem 0 4rem 0;
+  }
+
+  .lavori-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn-lavori-outline {
+    align-self: flex-start;
+  }
+
+  .lavori-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .lavori-item {
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-lavori-outline {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .lavori-grid {
+    gap: 0.625rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .lavori-section {
+    padding: 2.75rem 0 3.25rem 0;
+  }
+
+  .lavori-title {
+    font-size: 1.625rem;
+  }
+
+  .lavori-description {
+    font-size: 0.9375rem;
+  }
+
+  .lavori-grid {
+    gap: 0.5rem;
+  }
+
+  .lavori-item {
+    border-radius: 8px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   13. SPAZIO RISERVATO PER SEZIONI FUTURE (Placeholder Invisibile)
+   Consente di testare gli ancoraggi (#lavori, #chi-siamo, ecc.) in questa fase
+   -------------------------------------------------------------------------- */
+.section-anchor-placeholder {
+  min-height: 80vh;
+  padding: 4rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+}
+
+.placeholder-inner {
+  max-width: 600px;
+  text-align: center;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 12px;
+}
+
+.placeholder-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-brand-primary);
+  background: rgba(141, 234, 32, 0.1);
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.placeholder-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-white);
+  margin-bottom: 0.75rem;
+}
+
+.placeholder-desc {
+  font-size: 0.925rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   11. ACCESSIBILITÀ: PREFERS-REDUCED-MOTION
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
