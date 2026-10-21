@@ -321,19 +321,23 @@
       footerYear.textContent = new Date().getFullYear();
     }
 
-    // Gestione Modali Informative Policy
+    // 9. GESTIONE MODALI (Policy, Lavori Eseguiti, Chi Siamo)
     const modalTriggers = document.querySelectorAll('[data-modal]');
-    const modalOverlays = document.querySelectorAll('.policy-modal-overlay');
-    const modalCloses = document.querySelectorAll('.policy-modal-close');
+    const modalOverlays = document.querySelectorAll('.policy-modal-overlay, .site-modal-overlay');
+    const modalCloses = document.querySelectorAll('.policy-modal-close, .site-modal-close, [data-modal-close]');
+    let lastActiveTrigger = null;
 
-    function openModal(modalId) {
+    function openModal(modalId, triggerEl = null) {
       const targetModal = document.getElementById(modalId);
       if (!targetModal) return;
+      lastActiveTrigger = triggerEl;
       targetModal.classList.add('is-active');
       targetModal.setAttribute('aria-hidden', 'false');
       document.body.classList.add('menu-open');
-      const closeBtn = targetModal.querySelector('.policy-modal-close');
-      if (closeBtn) closeBtn.focus();
+      const closeBtn = targetModal.querySelector('.site-modal-close, .policy-modal-close');
+      if (closeBtn) {
+        closeBtn.focus();
+      }
     }
 
     function closeModal(targetModal) {
@@ -341,6 +345,10 @@
       targetModal.classList.remove('is-active');
       targetModal.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('menu-open');
+      if (lastActiveTrigger) {
+        lastActiveTrigger.focus();
+        lastActiveTrigger = null;
+      }
     }
 
     function closeAllModals() {
@@ -351,14 +359,14 @@
       trigger.addEventListener('click', (e) => {
         e.preventDefault();
         const modalId = trigger.getAttribute('data-modal');
-        openModal(modalId);
+        openModal(modalId, trigger);
       });
     });
 
     modalCloses.forEach((btn) => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        const modal = btn.closest('.policy-modal-overlay');
+        const modal = btn.closest('.policy-modal-overlay, .site-modal-overlay');
         closeModal(modal);
       });
     });
@@ -367,6 +375,16 @@
       overlay.addEventListener('click', (e) => {
         if (e.target === overlay) {
           closeModal(overlay);
+        }
+      });
+    });
+
+    // Chiusura al click sui link interni alla pagina dentro i modal (es. link a #contatti)
+    document.querySelectorAll('.site-modal-overlay a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', () => {
+        const modal = link.closest('.site-modal-overlay');
+        if (modal) {
+          closeModal(modal);
         }
       });
     });

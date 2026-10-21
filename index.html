@@ -22,7 +22,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Foglio di Stile Principale (con cache buster per aggiornamento immediato) -->
-  <link rel="stylesheet" href="css/style.css?v=10.4">
+  <link rel="stylesheet" href="css/style.css?v=10.5">
 </head>
 <body>
 
@@ -517,10 +517,17 @@
           </div>
 
           <div class="lavori-header-action">
-            <a href="#lavori" class="btn-lavori-outline" aria-label="Visualizza tutti gli interventi eseguiti">
+            <button 
+              type="button" 
+              class="btn-lavori-outline" 
+              data-modal="lavori-modal" 
+              aria-haspopup="dialog" 
+              aria-controls="lavori-modal" 
+              aria-label="Visualizza tutti gli interventi e servizi di detailing"
+            >
               <span>Vedi tutti i lavori</span>
               <span class="btn-arrow" aria-hidden="true">&rarr;</span>
-            </a>
+            </button>
           </div>
         </div>
 
@@ -753,10 +760,17 @@
 
           <!-- Pulsante Istituzionale Outline Verde -->
           <div class="chi-siamo-action">
-            <a href="#chi-siamo" class="btn-chi-siamo-outline" aria-label="Scopri di più sulla nostra storia e professionalità">
+            <button 
+              type="button" 
+              class="btn-chi-siamo-outline" 
+              data-modal="chi-siamo-modal" 
+              aria-haspopup="dialog" 
+              aria-controls="chi-siamo-modal" 
+              aria-label="Scopri di più sulla nostra storia, certificazioni e metodo di detailing"
+            >
               <span>Scopri di più su di noi</span>
               <span class="btn-arrow" aria-hidden="true">&rarr;</span>
-            </a>
+            </button>
           </div>
 
         </div>
@@ -1436,6 +1450,358 @@
   </footer>
 
   <!-- =========================================================================
+       MODALE 1: LAVORI ESEGUITI & CATALOGO SERVIZI COMPLETO
+       Trigger: Pulsante 'Vedi tutti i lavori' nella sezione Lavori Eseguiti
+       ========================================================================= -->
+  <div id="lavori-modal" class="site-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="lavori-modal-title" aria-describedby="lavori-modal-desc" aria-hidden="true">
+    <div class="site-modal-card site-modal-card-lg">
+      
+      <!-- Header Modale con Titolo e Pulsante di Chiusura -->
+      <div class="site-modal-header">
+        <div class="site-modal-header-text">
+          <div class="site-modal-eyebrow">
+            <span class="site-modal-eyebrow-bar" aria-hidden="true"></span>
+            <span class="site-modal-eyebrow-text">LAVORI ESEGUITI & CATALOGO SERVIZI</span>
+          </div>
+          <h3 id="lavori-modal-title" class="site-modal-title">I Nostri Servizi & Interventi di Detailing</h3>
+          <p id="lavori-modal-desc" class="site-modal-subtitle">
+            Dalla decontaminazione approfondita ai trattamenti nanoceramici fino al ripristino di interni e carrozzeria: scopri ogni nostro trattamento d'eccellenza.
+          </p>
+        </div>
+        <button type="button" class="site-modal-close" aria-label="Chiudi catalogo lavori e servizi" data-modal-close>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Corpo Scorrevole con Griglia Completa dei Servizi -->
+      <div class="site-modal-body">
+        
+        <div class="modal-services-grid">
+          
+          <!-- Servizio 1: Lavaggio Specialistico -->
+          <article class="modal-service-card">
+            <div class="modal-service-media">
+              <img src="assets/images/servizio-lavaggio.webp" alt="Lavaggio esterno e interno professionale" loading="lazy" width="480" height="320">
+              <span class="modal-service-badge">Esterni & Interni</span>
+            </div>
+            <div class="modal-service-content">
+              <h4 class="modal-service-title">Lavaggio Specialistico & Decontaminazione</h4>
+              <p class="modal-service-desc">
+                Lavaggio manuale accurato con tecnica a due secchi, shampoo a pH bilanciato e decontaminazione chimica/meccanica completa da residui ferrosi e catrame.
+              </p>
+              <ul class="modal-service-features" role="list">
+                <li>Tecnica antigraffio a 2 secchi con guanti in lana d'agnello</li>
+                <li>Decontaminazione chimica con deironizzante su carrozzeria e cerchi</li>
+                <li>Asciugatura a contatto zero con aria calda filtrata ad alta pressione</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Servizio 2: Lucidatura & Correzione Vernice -->
+          <article class="modal-service-card">
+            <div class="modal-service-media">
+              <img src="assets/images/servizio-lucidatura.webp" alt="Lucidatura professionale e correzione vernice" loading="lazy" width="480" height="320">
+              <span class="modal-service-badge">Carrozzeria a Specchio</span>
+            </div>
+            <div class="modal-service-content">
+              <h4 class="modal-service-title">Lucidatura Multistadio & Correzione</h4>
+              <p class="modal-service-desc">
+                Eliminazione fino al 95% di swirl, micrograffi, ologrammi e ossidazione, ripristinando una profondità di colore limpida e una lucentezza a specchio.
+              </p>
+              <ul class="modal-service-features" role="list">
+                <li>Rilievo dello spessore vernice con spessimetro digitale micrometrico</li>
+                <li>Processo multistadio con compound abrasivi calibrati e paste da finitura</li>
+                <li>Eliminazione definitiva dei difetti senza l'uso di cere riempitive</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Servizio 3: Trattamento Ceramico -->
+          <article class="modal-service-card">
+            <div class="modal-service-media">
+              <img src="assets/images/servizio-ceramico.webp" alt="Applicazione trattamento nanoceramico 9H" loading="lazy" width="480" height="320">
+              <span class="modal-service-badge">Protezione 3-5 Anni</span>
+            </div>
+            <div class="modal-service-content">
+              <h4 class="modal-service-title">Trattamento Nanoceramico 9H</h4>
+              <p class="modal-service-desc">
+                Rivestimento ceramico ultra-resistente che si ancora a livello molecolare al trasparente, creando uno scudo idrofobico contro agenti atmosferici e raggi UV.
+              </p>
+              <ul class="modal-service-features" role="list">
+                <li>Eccezionale effetto idrofobico: acqua e sporco scivolano via all'istante</li>
+                <li>Protezione da piogge acide, deiezioni di volatili e resine vegetali</li>
+                <li>Certificato di applicazione e garanzia scritta di durabilità nel tempo</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Servizio 4: Protezione Interni -->
+          <article class="modal-service-card">
+            <div class="modal-service-media">
+              <img src="assets/images/servizio-interni.webp" alt="Cura e protezione interni in pelle e tessuto" loading="lazy" width="480" height="320">
+              <span class="modal-service-badge">Interni di Lusso</span>
+            </div>
+            <div class="modal-service-content">
+              <h4 class="modal-service-title">Detox, Igenizzazione & Cura Pelle</h4>
+              <p class="modal-service-desc">
+                Trattamento di ringiovanimento dell'abitacolo con smacchiatura tessuti a vapore, sanificazione profonda e idratazione protettiva della pelle.
+              </p>
+              <ul class="modal-service-features" role="list">
+                <li>Smacchiatura a iniezione-estrazione su moquette, cielo e sedili</li>
+                <li>Pulizia e nutrimento della pelle con ripristino dell'opacità originale di fabbrica</li>
+                <li>Trattamento protettivo antimacchia e anti-UV su tutti i materiali</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Servizio 5: Rimozione Graffi -->
+          <article class="modal-service-card">
+            <div class="modal-service-media">
+              <img src="assets/images/servizio-rimozione-graffi.webp" alt="Rimozione graffi isolati e spot repair" loading="lazy" width="480" height="320">
+              <span class="modal-service-badge">Precisione Millimetrica</span>
+            </div>
+            <div class="modal-service-content">
+              <h4 class="modal-service-title">Rimozione Graffi & Spot Repair</h4>
+              <p class="modal-service-desc">
+                Interventi mirati di levigatura a umido e micro-lucidatura su graffi isolati e segni localizzati, evitando costose riverniciature del pannello.
+              </p>
+              <ul class="modal-service-features" role="list">
+                <li>Carteggiatura selettiva fine per livellare l'incisione del graffio</li>
+                <li>Preservazione del trasparente originale (verniciatura OEM originale)</li>
+                <li>Lucidatura ottica per un perfetto accordo visivo con il resto dell'auto</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Servizio 6: Rigenerazione Fari -->
+          <article class="modal-service-card">
+            <div class="modal-service-media">
+              <img src="assets/images/lavori-faro-auto.webp" alt="Rigenerazione fari opacizzati a LED e Xeno" loading="lazy" width="480" height="320">
+              <span class="modal-service-badge">Gruppi Ottici & Sicurezza</span>
+            </div>
+            <div class="modal-service-content">
+              <h4 class="modal-service-title">Rigenerazione & Sigillatura Fari</h4>
+              <p class="modal-service-desc">
+                Ripristino della perfetta trasparenza dei fari ingialliti o ossidati con sigillatura anti-UV a lunga durata per la massima visibilità notturna.
+              </p>
+              <ul class="modal-service-features" role="list">
+                <li>Asportazione meccanica dello strato di policarbonato degradato</li>
+                <li>Lucidatura ottica progressiva fino alla totale trasparenza cristallina</li>
+                <li>Applicazione di coating UV permanente per evitare futuri ingiallimenti</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Servizio 7: Dettaglio Cerchi & Pinze Freno -->
+          <article class="modal-service-card">
+            <div class="modal-service-media">
+              <img src="assets/images/lavori-cerchio-freno.webp" alt="Dettaglio e protezione ceramica per cerchi e pinze freno" loading="lazy" width="480" height="320">
+              <span class="modal-service-badge">Ruote & Alte Temperature</span>
+            </div>
+            <div class="modal-service-content">
+              <h4 class="modal-service-title">Dettaglio Cerchi & Pinze Freno</h4>
+              <p class="modal-service-desc">
+                Pulizia millimetrica del canale interno ed esterno del cerchio e applicazione di coating ceramico specifico per resistere al calore dei freni.
+              </p>
+              <ul class="modal-service-features" role="list">
+                <li>Eliminazione totale della polvere di ferodo incrostata nel canale</li>
+                <li>Protezione nanoceramica resistente fino a temperature di 700°C</li>
+                <li>Facilità estrema di pulizia futura con semplice getto d'acqua</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Servizio 8: Finitura Supercar & Showcar -->
+          <article class="modal-service-card">
+            <div class="modal-service-media">
+              <img src="assets/images/lavori-auto-blu.webp" alt="Preparazione da concorso e supercar detailing" loading="lazy" width="480" height="320">
+              <span class="modal-service-badge">Concorso d'Eleganza</span>
+            </div>
+            <div class="modal-service-content">
+              <h4 class="modal-service-title">Pacchetto Completo Supercar & Showcar</h4>
+              <p class="modal-service-desc">
+                Trattamento globale riservato a supercar, auto di lusso e veicoli da collezione per presentare il veicolo in condizioni impeccabili da esposizione.
+              </p>
+              <ul class="modal-service-features" role="list">
+                <li>Oltre 35-45 ore di lavoro manuale scrupoloso da detailer certificato</li>
+                <li>Cura di vano motore, guarnizioni, profili aerodinamici e scarichi</li>
+                <li>Book fotografico in alta risoluzione con report di lavorazione</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Banner CTA Finale del Pop-up -->
+        <div class="modal-cta-box">
+          <div class="modal-cta-text">
+            <h5>Vuoi regalare alla tua auto un trattamento di eccellenza?</h5>
+            <p>Contattaci per una consulenza e un preventivo personalizzato su misura per il tuo veicolo.</p>
+          </div>
+          <a href="#contatti" class="btn-modal-cta">
+            <span>Richiedi un preventivo</span>
+            <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODALE 2: CHI SIAMO - STORIA, FILOSOFIA & METODO
+       Trigger: Pulsante 'Scopri di più su di noi' nella sezione Chi Siamo
+       ========================================================================= -->
+  <div id="chi-siamo-modal" class="site-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="chi-siamo-modal-title" aria-describedby="chi-siamo-modal-desc" aria-hidden="true">
+    <div class="site-modal-card site-modal-card-md">
+      
+      <!-- Header Modale con Titolo e Pulsante di Chiusura -->
+      <div class="site-modal-header">
+        <div class="site-modal-header-text">
+          <div class="site-modal-eyebrow">
+            <span class="site-modal-eyebrow-bar" aria-hidden="true"></span>
+            <span class="site-modal-eyebrow-text">PRO DETAILING | LA NOSTRA STORIA</span>
+          </div>
+          <h3 id="chi-siamo-modal-title" class="site-modal-title">Eccellenza, Rigore e Passione Artigianale</h3>
+          <p id="chi-siamo-modal-desc" class="site-modal-subtitle">
+            Scopri come trasformiamo ogni trattamento in una vera opera di valorizzazione e protezione per la tua automobile.
+          </p>
+        </div>
+        <button type="button" class="site-modal-close" aria-label="Chiudi approfondimento Chi Siamo" data-modal-close>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Corpo Scorrevole con Approfondimento Istituzionale -->
+      <div class="site-modal-body">
+        
+        <!-- Hero Card con Foto del Detailer e Citazione -->
+        <div class="modal-about-hero">
+          <img src="assets/images/chi-siamo-detailer.webp" alt="Il master detailer di Pro Detailing al lavoro con passione e precisione" class="modal-about-img" loading="lazy" width="760" height="420">
+          <div class="modal-about-hero-overlay">
+            <blockquote class="modal-about-quote">
+              &ldquo;Il detailing non è un semplice lavaggio: è rispetto chirurgico per le superfici, scienza chimica applicata e dedizione assoluta alla perfezione.&rdquo;
+            </blockquote>
+          </div>
+        </div>
+
+        <!-- Paragrafi Narrativi -->
+        <div class="modal-about-story">
+          <h4>La Nascita di Pro Detailing</h4>
+          <p>
+            Pro Detailing nasce a Milano dal connubio tra una passione viscerale per il mondo dei motori e la determinazione di portare in Italia i più rigorosi standard del car detailing internazionale.
+          </p>
+          <p>
+            Ogni vettura che varca la soglia del nostro studio non è considerata un semplice mezzo di trasporto, ma un capolavoro di design, ingegneria ed emozione. Il nostro obiettivo è riportare ogni superficie — carrozzeria, cerchi, vetri e rivestimenti interni — a uno stato di conservazione superiore a quello del giorno di consegna in concessionaria.
+          </p>
+        </div>
+
+        <!-- I 4 Pilastri del Nostro Laboratorio -->
+        <div class="modal-pillars-grid">
+          
+          <div class="modal-pillar-item">
+            <div class="modal-pillar-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2"/><path d="M12 20v2"/>
+                <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
+                <path d="M2 12h2"/><path d="M20 12h2"/>
+                <path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+              </svg>
+            </div>
+            <div class="modal-pillar-text">
+              <h5>Illuminazione Specialistica Solare</h5>
+              <p>Illuminazione a LED calibrata ad altissimo indice CRI 98+ per individuare ogni singolo difetto invisibile alla luce comune.</p>
+            </div>
+          </div>
+
+          <div class="modal-pillar-item">
+            <div class="modal-pillar-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            </div>
+            <div class="modal-pillar-text">
+              <h5>Certificazioni & Chimica d'Élite</h5>
+              <p>Prodotti professionali nanometrici testati, biodegradabili, pH controllato e sicuri su trasparenti ultra-delicati.</p>
+            </div>
+          </div>
+
+          <div class="modal-pillar-item">
+            <div class="modal-pillar-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/>
+                <line x1="20" y1="4" x2="8.12" y2="15.88"/>
+                <line x1="14.47" y1="14.48" x2="20" y2="20"/>
+                <line x1="8.12" y1="8.12" x2="12" y2="12"/>
+              </svg>
+            </div>
+            <div class="modal-pillar-text">
+              <h5>Approccio Sartoriale su Misura</h5>
+              <p>Ogni intervento parte da una diagnosi con spessimetro digitale: niente soluzioni standardizzate, ma piani mirati sul singolo veicolo.</p>
+            </div>
+          </div>
+
+          <div class="modal-pillar-item">
+            <div class="modal-pillar-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10 9 9 9 8 9"/>
+              </svg>
+            </div>
+            <div class="modal-pillar-text">
+              <h5>Garanzia Scritta & Trasparenza</h5>
+              <p>Report completo delle lavorazioni, consulenza post-trattamento e linee guida chiare per preservare il valore dell'auto negli anni.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 3 Metriche Evidenziate -->
+        <div class="modal-metrics-row">
+          <div class="modal-metric-card">
+            <span class="modal-metric-num">+500</span>
+            <span class="modal-metric-label">Veicoli Rigenerati</span>
+          </div>
+          <div class="modal-metric-card">
+            <span class="modal-metric-num">100%</span>
+            <span class="modal-metric-label">Dedizione Artigianale</span>
+          </div>
+          <div class="modal-metric-card">
+            <span class="modal-metric-num">5 Anni</span>
+            <span class="modal-metric-label">Garanzia Ceramica</span>
+          </div>
+        </div>
+
+        <!-- Banner CTA Finale -->
+        <div class="modal-cta-box">
+          <div class="modal-cta-text">
+            <h5>Vuoi affidare la tua auto a chi la ama quanto te?</h5>
+            <p>Contattaci per una consulenza diretta o per prenotare una visita in studio.</p>
+          </div>
+          <a href="#contatti" class="btn-modal-cta">
+            <span>Contattaci per una consulenza</span>
+            <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =========================================================================
        MODALI INFORMATIVE POLICY (GDPR & COOKIE COMPLIANCE)
        Accessibili da tastiera, con focus trap e chiusura tramite ESC o click overlay.
        ========================================================================= -->
@@ -1491,7 +1857,7 @@
   </div>
 
   <!-- Script Funzionale Header -->
-  <script src="js/main.js?v=2.0"></script>
+  <script src="js/main.js?v=2.1"></script>
 </body>
 </html>
 
