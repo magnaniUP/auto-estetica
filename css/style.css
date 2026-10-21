@@ -2315,10 +2315,10 @@ svg {
   margin: 0;
 }
 
-/* Bottone di Azione: Leggi tutte le recensioni */
-.recensioni-header-right {
-  flex-shrink: 0;
-  margin-bottom: 0.25rem;
+/* Bottone di Azione: Leggi tutte le recensioni (Rimosso da layout) */
+.recensioni-header-right,
+.btn-recensioni-outline {
+  display: none !important;
 }
 
 .btn-recensioni-outline {
@@ -2607,10 +2607,10 @@ svg {
   margin: 0;
 }
 
-/* Bottone di Azione Header: Tutte le FAQ */
-.faq-header-right {
-  flex-shrink: 0;
-  margin-bottom: 0.25rem;
+/* Bottone di Azione Header: Tutte le FAQ (Rimosso da layout) */
+.faq-header-right,
+.btn-faq-outline {
+  display: none !important;
 }
 
 .btn-faq-outline {

@@ -11,20 +11,20 @@
   /**
    * 1. CONFIGURAZIONE CONTATTO WHATSAPP
    * ------------------------------------------------------------------------
-   * IMPORTANTE: Sostituire con il numero reale del cliente (formato internazionale senza '+' o spazi).
-   * Esempio: '393123456789' per un cellulare italiano (+39).
-   * Se il numero non è ancora disponibile, questo placeholder è predisposto per essere aggiornato qui.
+   * Numero rimosso per richiesta utente: i pulsanti utilizzano '#' come ancora.
    */
   const WHATSAPP_CONFIG = {
-    // Numero commerciale ufficiale configurato dal mockup
-    phoneNumber: '393512345678',
+    phoneNumber: '',
     defaultMessage: 'Buongiorno Pro Detailing, vorrei richiedere informazioni e un preventivo per la mia auto.'
   };
 
   /**
-   * Genera il link WhatsApp formattato
+   * Genera il link WhatsApp formattato (o '#' se il numero non è presente)
    */
   function getWhatsAppUrl() {
+    if (!WHATSAPP_CONFIG.phoneNumber) {
+      return '#';
+    }
     const encodedMsg = encodeURIComponent(WHATSAPP_CONFIG.defaultMessage);
     return `https://wa.me/${WHATSAPP_CONFIG.phoneNumber}?text=${encodedMsg}`;
   }
@@ -41,12 +41,17 @@
     const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
     const whatsappButtons = document.querySelectorAll('.btn-whatsapp');
 
-    // Configura i link di WhatsApp
+    // Configura i link di WhatsApp (# quando il numero non è impostato)
     const waUrl = getWhatsAppUrl();
     whatsappButtons.forEach((btn) => {
       btn.setAttribute('href', waUrl);
-      btn.setAttribute('target', '_blank');
-      btn.setAttribute('rel', 'noopener noreferrer');
+      if (waUrl === '#') {
+        btn.removeAttribute('target');
+        btn.removeAttribute('rel');
+      } else {
+        btn.setAttribute('target', '_blank');
+        btn.setAttribute('rel', 'noopener noreferrer');
+      }
     });
 
     /**
